@@ -124,4 +124,8 @@ def result():
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Lấy PORT từ biến môi trường hoặc dùng 5000 nếu không có
+    import os
+    port = int(os.environ.get('PORT', 5000))
+    # Khi triển khai trên hosting, cần bind vào 0.0.0.0 thay vì localhost
+    app.run(host='0.0.0.0', port=port, debug=False)
