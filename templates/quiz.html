@@ -510,6 +510,31 @@
             filter: brightness(1.05);
         }
 
+        /* Exam Mode Button */
+        .button.exam-button {
+            background: linear-gradient(135deg, #dd6b20, #c05621); /* Orange gradient */
+            margin-top: 10px;
+        }
+        .button.exam-button:hover {
+            background: linear-gradient(135deg, #c05621, #dd6b20);
+            box-shadow: 0 6px 20px rgba(221, 107, 33, 0.3);
+            filter: brightness(1.05);
+        }
+
+        /* Timer Display */
+        .timer-display {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #c53030; /* Darker Red color for urgency */
+            margin: 10px auto 15px; /* Centered with auto margins */
+            text-align: center;
+            padding: 10px 15px;
+            background-color: #fed7d7; /* Light red background */
+            border-radius: 8px;
+            border: 1px solid #f56565; /* Red border */
+            max-width: 300px; /* Max width for better centering */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
 
         /* Responsive design */
         @media (max-width: 992px) { /* Adjusted breakpoint for two-column layout */
@@ -559,9 +584,10 @@
             <h1>🎯 Trắc nghiệm Online</h1>
             <p>Chào mừng bạn đến với bài trắc nghiệm kiến thức!</p>
             <p>📚 Tổng số câu hỏi: <strong id="totalQuestionsDisplayStart">{{ total_questions }}</strong></p>
-            <p>⏱️ Thời gian: Không giới hạn</p>
+            <p>⏱️ Thời gian: Không giới hạn (cho chế độ thường)</p>
             <p>🎯 Mỗi câu hỏi chỉ được chọn một lần</p>
-            <button onclick="startQuiz()" class="full-width">🚀 Bắt đầu làm bài</button>
+            <button onclick="startQuiz()" class="full-width">🚀 Bắt đầu làm bài (Thường)</button>
+            <button onclick="startExam()" class="button exam-button full-width">🏆 Làm bài thi (40 câu, 20 phút)</button>
         </div>
 
         <!-- Loading spinner -->
@@ -577,6 +603,10 @@
 
                 <div class="score-display" id="scoreDisplayContainer">
                     🏆 Điểm hiện tại: <span id="currentScore">0</span>/<span id="totalQuestionsQuiz">{{ total_questions }}</span>
+                </div>
+
+                <div class="timer-display" id="timerDisplay" style="display: none;">
+                    ⏱️ Thời gian còn lại: <span id="timeLeft">20:00</span>
                 </div>
 
                 <h2 id="questionTitle">❓ Câu hỏi 1:</h2>
@@ -648,6 +678,14 @@
         let questionsPerPage = 10; // Or any number you prefer
         let currentQuestionListPage = 1;
 
+        // Exam Mode Variables
+        let isExamMode = false;
+        let examTimerInterval = null;
+        const EXAM_TIME_LIMIT_SECONDS = 20 * 60; // 20 minutes
+        let remainingTime = EXAM_TIME_LIMIT_SECONDS;
+        const EXAM_NUM_QUESTIONS = 40;
+
+
         // DOM elements
         const startScreen = document.getElementById('startScreen');
         const quizScreen = document.getElementById('quizScreen');
@@ -680,6 +718,10 @@
         
         const resultDetailsContainer = document.getElementById('resultDetailsContainer');
 
+        // Timer DOM Elements
+        const timerDisplay = document.getElementById('timerDisplay');
+        const timeLeftDisplay = document.getElementById('timeLeft');
+
 
         // Utility functions
         function showLoading() {
@@ -710,6 +752,46 @@
         
         function updateScoreDisplay() {
             currentScoreDisplay.textContent = currentScore;
+        }
+
+        // Shuffle array utility (Fisher-Yates)
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        // Timer Functions
+        function updateTimerDisplay() {
+            if (!timeLeftDisplay) return;
+            const minutes = Math.floor(remainingTime / 60);
+            const seconds = remainingTime % 60;
+            timeLeftDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function startCountdownTimer() {
+            if (examTimerInterval) clearInterval(examTimerInterval); 
+
+            remainingTime = EXAM_TIME_LIMIT_SECONDS;
+            updateTimerDisplay(); 
+            if(timerDisplay) timerDisplay.style.display = 'block';
+
+
+            examTimerInterval = setInterval(() => {
+                remainingTime--;
+                updateTimerDisplay();
+                if (remainingTime <= 0) {
+                    stopCountdownTimer();
+                    alert("Hết giờ! Bài của bạn sẽ được nộp tự động.");
+                    confirmSubmit(); // Auto-submit
+                }
+            }, 1000);
+        }
+
+        function stopCountdownTimer() {
+            clearInterval(examTimerInterval);
+            examTimerInterval = null;
         }
 
 
@@ -773,18 +855,54 @@
         
 
         // Main functions
-        async function startQuiz() {
+        async function initializeQuiz(isExamModeFlag) {
             showLoading();
+            isExamMode = isExamModeFlag; 
+
             try {
                 const response = await fetch('/api/questions');
                 const data = await response.json();
 
                 if (response.ok) {
-                    questions = data.questions;
-                    totalQuestions = data.total;
+                    let allQuestions = data.questions;
+                    let originalTotalQuestions = data.total;
+
+                    if (isExamMode) {
+                        shuffleArray(allQuestions);
+                        questions = allQuestions.slice(0, EXAM_NUM_QUESTIONS);
+                        if (questions.length < EXAM_NUM_QUESTIONS && questions.length > 0) {
+                            console.warn(`Exam mode: Requested ${EXAM_NUM_QUESTIONS} questions, but only ${questions.length} are available. Proceeding with ${questions.length}.`);
+                        } else if (questions.length === 0 && allQuestions.length > 0) {
+                             console.warn(`Exam mode: Not enough questions for exam mode (need ${EXAM_NUM_QUESTIONS}, got ${allQuestions.length}). Falling back to normal mode.`);
+                             isExamMode = false; // Fallback to normal mode
+                             questions = allQuestions;
+                             if(timerDisplay) timerDisplay.style.display = 'none';
+                        } else if (questions.length === 0 && allQuestions.length === 0) {
+                            showError("Không có câu hỏi nào trong hệ thống.");
+                            startScreen.style.display = 'block';
+                            quizScreen.style.display = 'none';
+                            hideLoading();
+                            return;
+                        }
+                        totalQuestions = questions.length;
+                        if (isExamMode) { // Check again due to potential fallback
+                           startCountdownTimer();
+                        }
+                    } else {
+                        questions = allQuestions;
+                        totalQuestions = originalTotalQuestions;
+                        if(timerDisplay) timerDisplay.style.display = 'none';
+                    }
                     
-                    // Update total questions display everywhere
-                    totalQuestionsDisplayStart.textContent = totalQuestions;
+                    if (totalQuestions === 0 && questions.length === 0) { // Double check if somehow totalQuestions became 0
+                        showError("Không có câu hỏi nào để bắt đầu bài làm.");
+                        startScreen.style.display = 'block';
+                        quizScreen.style.display = 'none';
+                        hideLoading();
+                        return;
+                    }
+                    
+                    totalQuestionsDisplayStart.textContent = originalTotalQuestions; // Always show full count on start screen
                     totalQuestionsQuizDisplay.textContent = totalQuestions;
                     totalQuestionsResultDisplay.textContent = totalQuestions;
 
@@ -793,37 +911,46 @@
                     currentScore = 0;
                     userAnswers = {};
                     currentQuestionListPage = 1;
-
+                    // remainingTime is reset in startCountdownTimer if exam mode
 
                     updateScoreDisplay();
-                    updateProgress(); // Initial progress
+                    updateProgress(); 
 
                     startScreen.style.display = 'none';
-                    resultScreen.style.display = 'none'; // Ensure result screen is hidden
-                    quizScreen.style.display = 'grid'; // Changed to grid
+                    resultScreen.style.display = 'none'; 
+                    quizScreen.style.display = 'grid'; 
                     quizMainContent.classList.remove('slide-out-left');
                     quizMainContent.classList.add('slide-in-right');
                     
-                    // Clean up animation class
                     setTimeout(() => {
                         quizMainContent.classList.remove('slide-in-right');
                     }, 300);
 
                     displayQuestion();
-                    renderQuestionList(); // Initial render of question list
+                    renderQuestionList(); 
                 } else {
                     throw new Error('Không thể tải câu hỏi');
                 }
             } catch (error) {
                 console.error('Error starting quiz:', error);
                 showError('Lỗi khi tải câu hỏi. Vui lòng thử lại!');
-                // Optionally, show start screen again or a specific error state
                 startScreen.style.display = 'block';
                 quizScreen.style.display = 'none';
+                if (isExamMode) stopCountdownTimer(); // Stop timer if error during exam start
+                if(timerDisplay) timerDisplay.style.display = 'none';
             } finally {
                 hideLoading();
             }
         }
+        
+        async function startQuiz() { // Wrapper for normal quiz
+            await initializeQuiz(false);
+        }
+
+        async function startExam() { // Wrapper for exam mode
+            await initializeQuiz(true);
+        }
+
 
         function displayQuestion() {
             if (currentQuestionIndex < 0 || currentQuestionIndex >= questions.length) {
@@ -942,12 +1069,18 @@
         }
 
         function confirmSubmit() {
+            if (isExamMode) {
+                stopCountdownTimer();
+            }
             submitConfirmationModal.style.display = 'none';
             showResult();
         }
 
 
         async function showResult() {
+            if (isExamMode) {
+                stopCountdownTimer(); // Ensure timer is stopped
+            }
             // Final score calculation (already done by selectAnswer, but can be re-verified)
             let finalCalculatedScore = 0;
             for (let i = 0; i < totalQuestions; i++) {
@@ -1044,11 +1177,13 @@
         }
 
         async function restartQuiz() {
+            if (isExamMode) {
+                stopCountdownTimer();
+                isExamMode = false; 
+                if (timerDisplay) timerDisplay.style.display = 'none';
+            }
             showLoading();
             // No need to call /api/reset_quiz if all state is client-side or re-fetched
-            // If server-side session needs reset, then keep the fetch call.
-            // For now, assuming client-side reset is sufficient for a "Làm lại"
-            
             resultScreen.classList.add('slide-out-left');
             
             setTimeout(() => {
@@ -1062,7 +1197,7 @@
                 userAnswers = {};
                 currentQuestionIndex = 0;
                 currentScore = 0;
-                totalQuestions = 0; // This will be re-fetched by startQuiz
+                totalQuestions = 0; // This will be re-fetched by initializeQuiz
                 currentQuestionListPage = 1;
 
                 // Clear dynamic content
@@ -1073,10 +1208,12 @@
                 progressText.textContent = `0/{{ total_questions }}`; // Reset to placeholder
                 currentScoreDisplay.textContent = '0';
                 
-                // Update total questions display on start screen (might be dynamic from server)
-                // totalQuestionsDisplayStart.textContent = "{{ total_questions }}"; // Or fetch again
+                // totalQuestionsDisplayStart is set by DOMContentLoaded and initializeQuiz
+                // Ensure quiz screen's timer is hidden if user restarts from an exam
+                if (timerDisplay) timerDisplay.style.display = 'none';
 
-                // Show sidebar again when quiz starts
+
+                // Show sidebar again when quiz starts (will be handled by initializeQuiz)
                 document.querySelector('.question-list-sidebar').style.display = 'block';
 
 
@@ -1084,7 +1221,7 @@
                     startScreen.classList.remove('slide-in-right');
                     resultScreen.classList.remove('slide-out-left');
                     hideLoading();
-                    // Do not call startQuiz() here, let user click "Bắt đầu"
+                    // Do not call initializeQuiz() here, let user click "Bắt đầu"
                 }, 300);
             }, 300);
         }
@@ -1093,8 +1230,9 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Set initial total questions from template if available, will be overwritten by API
             const initialTotal = parseInt("{{ total_questions }}", 10) || 0;
-            totalQuestionsDisplayStart.textContent = initialTotal;
-            totalQuestionsQuizDisplay.textContent = initialTotal;
+            totalQuestionsDisplayStart.textContent = initialTotal; // This shows total available
+            // These will be updated by initializeQuiz based on mode
+            totalQuestionsQuizDisplay.textContent = initialTotal; 
             totalQuestionsResultDisplay.textContent = initialTotal;
             progressText.textContent = `0/${initialTotal}`;
 
