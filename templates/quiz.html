@@ -42,7 +42,7 @@
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1), 0 0 0 1px rgba(255,255,255,0.2);
             width: 100%;
-            max-width: 800px;
+            max-width: 1200px; /* Increased max-width for the new layout */
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -159,7 +159,7 @@
             accent-color: #667eea;
         }
 
-        button {
+        button, .button { /* Added .button for consistent styling */
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             border: none;
@@ -168,25 +168,30 @@
             font-weight: 600;
             border-radius: 12px;
             cursor: pointer;
-            display: block;
-            width: 100%;
+            display: inline-block; /* Changed to inline-block for multiple buttons */
             margin-top: 1.5rem;
             transition: all 0.2s ease;
             position: relative;
+            text-align: center;
+        }
+        
+        button.full-width, .button.full-width {
+            display: block;
+            width: 100%;
         }
 
-        button:hover:not(:disabled) {
+        button:hover:not(:disabled), .button:hover:not(:disabled) {
             transform: translateY(-1px);
             box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
             filter: brightness(1.05);
         }
 
-        button:active:not(:disabled) {
+        button:active:not(:disabled), .button:active:not(:disabled) {
             transform: translateY(0);
             transition: transform 0.1s ease;
         }
 
-        button:disabled {
+        button:disabled, .button:disabled {
             background: linear-gradient(135deg, #a0aec0, #718096);
             cursor: not-allowed;
             transform: none;
@@ -230,14 +235,7 @@
             color: #4a5568;
         }
 
-        .next-button {
-            display: none;
-            background: linear-gradient(135deg, #38a169, #2f855a);
-        }
-
-        .next-button:hover {
-            box-shadow: 0 10px 30px rgba(56, 161, 105, 0.4);
-        }
+        /* Removed .next-button styles as it's being removed */
 
         .start-screen, .result-screen {
             text-align: center;
@@ -245,9 +243,92 @@
         }
 
         .quiz-screen {
-            display: none;
+            display: none; /* Initially hidden */
+            grid-template-columns: 2fr 1fr; /* Two columns: question area and list area */
+            gap: 2rem; /* Gap between columns */
             transition: all 0.3s ease;
         }
+        
+        .question-list-sidebar {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            height: fit-content; /* Adjust height as needed */
+            max-height: 70vh; /* Example max height */
+            overflow-y: auto;
+        }
+
+        .question-list-sidebar h3 {
+            margin-bottom: 1rem;
+            color: #4a5568;
+            font-weight: 600;
+        }
+
+        .question-list-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .question-list-item {
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            cursor: pointer;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+            font-weight: 500;
+            color: #2d3748;
+        }
+
+        .question-list-item:hover {
+            background-color: #edf2f7;
+            border-color: #cbd5e0;
+        }
+        
+        .question-list-item.active {
+            background-color: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .question-list-item.answered {
+            background-color: #c6f6d5; /* Light green for answered (correct) */
+            border-color: #9ae6b4;
+            color: #2f855a; /* Text color for correct answers */
+        }
+        
+        .question-list-item.answered.active {
+             background-color: #48bb78; /* Darker green if active and answered (correct) */
+             color: white;
+        }
+
+        .question-list-item.answered.incorrect-answer {
+            background-color: #fed7d7; /* Light red for incorrect answer */
+            border-color: #feb2b2;
+            color: #c53030; /* Text color for incorrect answers */
+        }
+
+        .question-list-item.answered.incorrect-answer.active {
+            background-color: #e53e3e; /* Darker red if active and incorrect */
+            color: white;
+        }
+
+
+        .pagination-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .pagination-controls button {
+            padding: 8px 12px;
+            font-size: 0.9rem;
+            margin: 0 5px; /* Adjust margin for pagination buttons */
+        }
+
 
         .loading-spinner {
             display: none;
@@ -331,6 +412,37 @@
             font-size: 1.2rem;
             margin: 2rem 0;
         }
+        
+        .result-details {
+            margin-top: 2rem;
+            text-align: left;
+        }
+        .result-details h3 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .result-question {
+            background: #f9fafb;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #e2e8f0;
+        }
+        .result-question p {
+            margin-bottom: 5px;
+        }
+        .result-question .user-answer.correct {
+            color: #38a169; /* Green for correct user answer */
+        }
+        .result-question .user-answer.incorrect {
+            color: #e53e3e; /* Red for incorrect user answer */
+        }
+        .result-question .correct-answer-text {
+            font-weight: bold;
+            color: #38a169;
+        }
+
 
         .start-screen p {
             font-size: 1.1rem;
@@ -338,12 +450,83 @@
             margin-bottom: 1rem;
             line-height: 1.6;
         }
+        
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.6);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+        }
+        
+        .modal-content h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: #2d3748;
+        }
+
+        .modal-buttons {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: space-around; /* Or flex-end with margin */
+        }
+        
+        .modal-buttons button {
+            padding: 12px 25px;
+            font-size: 1rem;
+            min-width: 120px;
+        }
+
+        .modal-buttons .confirm-button {
+            background: linear-gradient(135deg, #38a169, #2f855a); /* Green for confirm */
+        }
+        .modal-buttons .confirm-button:hover {
+            box-shadow: 0 6px 20px rgba(56, 161, 105, 0.3);
+            filter: brightness(1.05);
+        }
+
+        .modal-buttons .cancel-button {
+            background: linear-gradient(135deg, #e53e3e, #c53030); /* Red for cancel */
+        }
+         .modal-buttons .cancel-button:hover {
+            box-shadow: 0 6px 20px rgba(229, 62, 62, 0.3);
+            filter: brightness(1.05);
+        }
+
 
         /* Responsive design */
+        @media (max-width: 992px) { /* Adjusted breakpoint for two-column layout */
+            .quiz-screen {
+                grid-template-columns: 1fr; /* Stack columns on smaller screens */
+            }
+            .question-list-sidebar {
+                margin-top: 2rem; /* Add some space when stacked */
+                max-height: 40vh;
+            }
+        }
+
         @media (max-width: 768px) {
             .quiz-container {
                 padding: 1.5rem;
                 margin: 10px;
+                max-width: 100%; /* Full width on small screens */
             }
 
             h1 {
@@ -358,9 +541,13 @@
                 padding: 12px 16px;
             }
 
-            button {
+            button, .button {
                 padding: 14px 24px;
                 font-size: 1rem;
+            }
+            .modal-content {
+                margin: 20% auto;
+                padding: 20px;
             }
         }
     </style>
@@ -371,10 +558,10 @@
         <div class="start-screen" id="startScreen">
             <h1>🎯 Trắc nghiệm Online</h1>
             <p>Chào mừng bạn đến với bài trắc nghiệm kiến thức!</p>
-            <p>📚 Tổng số câu hỏi: <strong>{{ total_questions }}</strong></p>
+            <p>📚 Tổng số câu hỏi: <strong id="totalQuestionsDisplayStart">{{ total_questions }}</strong></p>
             <p>⏱️ Thời gian: Không giới hạn</p>
             <p>🎯 Mỗi câu hỏi chỉ được chọn một lần</p>
-            <button onclick="startQuiz()">🚀 Bắt đầu làm bài</button>
+            <button onclick="startQuiz()" class="full-width">🚀 Bắt đầu làm bài</button>
         </div>
 
         <!-- Loading spinner -->
@@ -382,23 +569,37 @@
 
         <!-- Màn hình quiz -->
         <div class="quiz-screen" id="quizScreen">
-            <div class="progress">
-                <div class="progress-bar" id="progressBar"></div>
-                <div class="progress-text" id="progressText">0/{{ total_questions }}</div>
+            <div class="quiz-main-content">
+                <div class="progress">
+                    <div class="progress-bar" id="progressBar"></div>
+                    <div class="progress-text" id="progressText">0/{{ total_questions }}</div>
+                </div>
+
+                <div class="score-display" id="scoreDisplayContainer">
+                    🏆 Điểm hiện tại: <span id="currentScore">0</span>/<span id="totalQuestionsQuiz">{{ total_questions }}</span>
+                </div>
+
+                <h2 id="questionTitle">❓ Câu hỏi 1:</h2>
+                <pre id="questionContent"></pre>
+
+                <div class="options" id="options">
+                    <!-- Options sẽ được tạo động bằng JavaScript -->
+                </div>
+                
+                <button id="submitQuizButton" class="button full-width" onclick="showSubmitConfirmation()">📝 Nộp bài</button>
             </div>
 
-            <div class="score-display" id="scoreDisplay">
-                🏆 Điểm hiện tại: <span id="currentScore">0</span>/{{ total_questions }}
+            <div class="question-list-sidebar">
+                <h3>Danh sách câu hỏi</h3>
+                <div id="questionListItemsContainer" class="question-list-items">
+                    <!-- Question list items will be generated by JS -->
+                </div>
+                <div class="pagination-controls" id="questionListPagination">
+                    <button id="prevPageButton" onclick="prevQuestionListPage()">Trước</button>
+                    <span id="pageInfo">Trang 1/1</span>
+                    <button id="nextPageButton" onclick="nextQuestionListPage()">Sau</button>
+                </div>
             </div>
-
-            <h2 id="questionTitle">❓ Câu hỏi 1:</h2>
-            <pre id="questionContent"></pre>
-
-            <div class="options" id="options">
-                <!-- Options sẽ được tạo động bằng JavaScript -->
-            </div>
-
-            <button id="nextButton" class="next-button" onclick="nextQuestion()">➡️ Câu tiếp theo</button>
         </div>
 
         <!-- Màn hình kết quả -->
@@ -406,11 +607,29 @@
             <h1>🎉 Hoàn thành!</h1>
             <div class="score-display">
                 <h2>📊 Kết quả của bạn</h2>
-                <p>🎯 Điểm số: <span id="finalScore">0</span>/<span id="totalQuestions">{{ total_questions }}</span></p>
+                <p>🎯 Điểm số: <span id="finalScore">0</span>/<span id="totalQuestionsResult">{{ total_questions }}</span></p>
                 <p>📈 Tỷ lệ đúng: <span id="percentage">0</span>%</p>
                 <div id="resultMessage" style="margin-top: 1rem; font-size: 1.1rem;"></div>
             </div>
-            <button onclick="restartQuiz()">🔄 Làm lại</button>
+            
+            <button onclick="restartQuiz()" class="full-width">🔄 Làm lại</button>
+
+            <div class="result-details" id="resultDetailsContainer">
+                <h3>📝 Chi tiết bài làm</h3>
+                <!-- Detailed results will be populated here by JS -->
+            </div>
+        </div>
+
+        <!-- Modal xác nhận nộp bài -->
+        <div id="submitConfirmationModal" class="modal">
+            <div class="modal-content">
+                <h3>Xác nhận nộp bài</h3>
+                <p>Bạn có chắc chắn muốn nộp bài không? Các câu chưa trả lời sẽ được tính là sai.</p>
+                <div class="modal-buttons">
+                    <button onclick="confirmSubmit()" class="confirm-button">Nộp bài</button>
+                    <button onclick="cancelSubmit()" class="cancel-button">Hủy</button>
+                </div>
+            </div>
         </div>
 
         <div class="error" id="errorMessage" style="display: none;"></div>
@@ -419,10 +638,15 @@
     <script>
         // Global variables
         let questions = [];
+        let userAnswers = {}; // To store user's answers { questionIndex: selectedOptionKey }
         let currentQuestionIndex = 0;
         let currentScore = 0;
-        let answered = false;
-        let totalQuestions = 0; // Will be set after fetching questions
+        // let answered = false; // This might need to be re-evaluated or used per question
+        let totalQuestions = 0; 
+
+        // Question list pagination
+        let questionsPerPage = 10; // Or any number you prefer
+        let currentQuestionListPage = 1;
 
         // DOM elements
         const startScreen = document.getElementById('startScreen');
@@ -430,13 +654,32 @@
         const resultScreen = document.getElementById('resultScreen');
         const loadingSpinner = document.getElementById('loadingSpinner');
         const errorMessage = document.getElementById('errorMessage');
+        
+        const quizMainContent = document.querySelector('.quiz-main-content'); // For animations
+        
         const progressBar = document.getElementById('progressBar');
         const progressText = document.getElementById('progressText');
-        const scoreDisplay = document.getElementById('currentScore');
+        const currentScoreDisplay = document.getElementById('currentScore'); // Renamed from scoreDisplay
+        const totalQuestionsDisplayStart = document.getElementById('totalQuestionsDisplayStart');
+        const totalQuestionsQuizDisplay = document.getElementById('totalQuestionsQuiz');
+        const totalQuestionsResultDisplay = document.getElementById('totalQuestionsResult');
+
         const questionTitle = document.getElementById('questionTitle');
         const questionContent = document.getElementById('questionContent');
         const optionsContainer = document.getElementById('options');
-        const nextButton = document.getElementById('nextButton');
+        // const nextButton = document.getElementById('nextButton'); // Removed
+
+        const submitQuizButton = document.getElementById('submitQuizButton');
+        const submitConfirmationModal = document.getElementById('submitConfirmationModal');
+
+        const questionListItemsContainer = document.getElementById('questionListItemsContainer');
+        const questionListPagination = document.getElementById('questionListPagination');
+        const prevPageButton = document.getElementById('prevPageButton');
+        const nextPageButton = document.getElementById('nextPageButton');
+        const pageInfo = document.getElementById('pageInfo');
+        
+        const resultDetailsContainer = document.getElementById('resultDetailsContainer');
+
 
         // Utility functions
         function showLoading() {
@@ -458,15 +701,76 @@
         }
 
         function updateProgress() {
-            const percentage = ((currentQuestionIndex + 1) / totalQuestions) * 100;
+            // Progress based on number of answered questions
+            const answeredCount = Object.keys(userAnswers).length;
+            const percentage = totalQuestions > 0 ? (answeredCount / totalQuestions) * 100 : 0;
             progressBar.style.width = percentage + '%';
-            progressText.textContent = `${currentQuestionIndex + 1}/${totalQuestions}`;
+            progressText.textContent = `${answeredCount}/${totalQuestions}`;
+        }
+        
+        function updateScoreDisplay() {
+            currentScoreDisplay.textContent = currentScore;
         }
 
-        function updateScore(score) {
-            currentScore = score;
-            scoreDisplay.textContent = score;
+
+        // Question List Functions
+        function renderQuestionList() {
+            questionListItemsContainer.innerHTML = '';
+            const totalPages = Math.ceil(totalQuestions / questionsPerPage);
+            pageInfo.textContent = `Trang ${currentQuestionListPage}/${totalPages || 1}`; // Avoid 0 total pages
+
+            const startIndex = (currentQuestionListPage - 1) * questionsPerPage;
+            const endIndex = Math.min(startIndex + questionsPerPage, totalQuestions);
+
+            for (let i = startIndex; i < endIndex; i++) {
+                const listItem = document.createElement('div');
+                listItem.classList.add('question-list-item');
+                listItem.textContent = `Câu ${i + 1}`;
+                listItem.dataset.questionIndex = i;
+                listItem.onclick = () => navigateToQuestion(i);
+
+                if (userAnswers.hasOwnProperty(i)) {
+                    listItem.classList.add('answered');
+                    const question = questions[i];
+                    if (question && userAnswers[i] === question.correct_answer) {
+                        // .answered class already makes it green (correct)
+                    } else if (question) {
+                        listItem.classList.add('incorrect-answer');
+                    }
+                }
+                if (i === currentQuestionIndex) {
+                    listItem.classList.add('active');
+                }
+                questionListItemsContainer.appendChild(listItem);
+            }
+
+            prevPageButton.disabled = currentQuestionListPage === 1;
+            nextPageButton.disabled = currentQuestionListPage === totalPages || totalPages === 0;
+            questionListPagination.style.display = totalPages > 1 ? 'flex' : 'none';
         }
+
+        function prevQuestionListPage() {
+            if (currentQuestionListPage > 1) {
+                currentQuestionListPage--;
+                renderQuestionList();
+            }
+        }
+
+        function nextQuestionListPage() {
+            const totalPages = Math.ceil(totalQuestions / questionsPerPage);
+            if (currentQuestionListPage < totalPages) {
+                currentQuestionListPage++;
+                renderQuestionList();
+            }
+        }
+        
+        function navigateToQuestion(index) {
+            if (index >= 0 && index < totalQuestions) {
+                currentQuestionIndex = index;
+                displayQuestion(); 
+            }
+        }
+        
 
         // Main functions
         async function startQuiz() {
@@ -478,231 +782,323 @@
                 if (response.ok) {
                     questions = data.questions;
                     totalQuestions = data.total;
+                    
+                    // Update total questions display everywhere
+                    totalQuestionsDisplayStart.textContent = totalQuestions;
+                    totalQuestionsQuizDisplay.textContent = totalQuestions;
+                    totalQuestionsResultDisplay.textContent = totalQuestions;
+
+
                     currentQuestionIndex = 0;
                     currentScore = 0;
+                    userAnswers = {};
+                    currentQuestionListPage = 1;
+
+
+                    updateScoreDisplay();
+                    updateProgress(); // Initial progress
 
                     startScreen.style.display = 'none';
-                    quizScreen.style.display = 'block';
-                    quizScreen.classList.add('slide-in-right');
+                    resultScreen.style.display = 'none'; // Ensure result screen is hidden
+                    quizScreen.style.display = 'grid'; // Changed to grid
+                    quizMainContent.classList.remove('slide-out-left');
+                    quizMainContent.classList.add('slide-in-right');
+                    
+                    // Clean up animation class
+                    setTimeout(() => {
+                        quizMainContent.classList.remove('slide-in-right');
+                    }, 300);
 
                     displayQuestion();
+                    renderQuestionList(); // Initial render of question list
                 } else {
                     throw new Error('Không thể tải câu hỏi');
                 }
             } catch (error) {
-                console.error('Error:', error);
+                console.error('Error starting quiz:', error);
                 showError('Lỗi khi tải câu hỏi. Vui lòng thử lại!');
+                // Optionally, show start screen again or a specific error state
+                startScreen.style.display = 'block';
+                quizScreen.style.display = 'none';
             } finally {
                 hideLoading();
             }
         }
 
         function displayQuestion() {
-            if (currentQuestionIndex >= questions.length) {
-                showResult();
-                return;
+            if (currentQuestionIndex < 0 || currentQuestionIndex >= questions.length) {
+                // This case should ideally be handled by navigation logic or submit
+                console.warn("Invalid currentQuestionIndex:", currentQuestionIndex);
+                if (questions.length > 0) {
+                    currentQuestionIndex = 0; // Reset to first if out of bounds
+                } else {
+                    showError("Không có câu hỏi nào để hiển thị.");
+                    // Potentially go back to start screen or show empty state
+                    quizScreen.style.display = 'none';
+                    startScreen.style.display = 'block';
+                    return;
+                }
             }
 
             const question = questions[currentQuestionIndex];
-            answered = false;
+            // answered = userAnswers.hasOwnProperty(currentQuestionIndex); // Check if current question was answered
 
             // Update UI
             questionTitle.textContent = `❓ Câu hỏi ${currentQuestionIndex + 1}:`;
             questionContent.textContent = question.question_content;
-            updateProgress();
-
+            
             // Clear and create options
             optionsContainer.innerHTML = '';
             Object.entries(question.options).forEach(([key, value]) => {
                 const optionDiv = document.createElement('div');
-                optionDiv.className = 'option-item';
+                optionDiv.className = 'option-item'; // Keep this for styling selected/correct/incorrect
                 optionDiv.setAttribute('data-value', key);
-                optionDiv.onclick = () => selectAnswer(key);
 
                 const radio = document.createElement('input');
                 radio.type = 'radio';
-                radio.id = `option${key}`;
-                radio.name = 'option';
+                radio.id = `option${key}_q${currentQuestionIndex}`; // Unique ID per question
+                radio.name = `option_q${currentQuestionIndex}`; // Unique name per question
                 radio.value = key;
+                radio.onchange = () => selectAnswer(key); // Changed to onchange for radios
+
+                if (userAnswers[currentQuestionIndex] === key) {
+                    radio.checked = true;
+                }
 
                 const label = document.createElement('label');
-                label.htmlFor = `option${key}`;
+                label.htmlFor = `option${key}_q${currentQuestionIndex}`;
                 label.textContent = `${key}. ${value}`;
-
+                
+                // Wrap radio and label in the div, then add click to div to also check radio
                 optionDiv.appendChild(radio);
                 optionDiv.appendChild(label);
+                optionDiv.onclick = () => { // Allow clicking the whole div
+                    if (!radio.disabled) {
+                         radio.checked = true;
+                         selectAnswer(key);
+                    }
+                };
                 optionsContainer.appendChild(optionDiv);
             });
+            
+            // If question already answered, show feedback and disable options
+            if (userAnswers.hasOwnProperty(currentQuestionIndex)) {
+                showAnswerFeedback(userAnswers[currentQuestionIndex]);
+            }
 
-            // Hide next button
-            nextButton.style.display = 'none';
+            renderQuestionList(); // Re-render to update active item
+            updateProgress(); // Update progress based on answered questions
         }
-
-        function selectAnswer(selectedAnswer) {
-            if (answered) return;
-
-            answered = true;
+        
+        function showAnswerFeedback(selectedAnswerKey) {
             const question = questions[currentQuestionIndex];
             const correctAnswer = question.correct_answer;
-            const isCorrect = selectedAnswer === correctAnswer;
+            const isCorrect = selectedAnswerKey === correctAnswer;
 
-            // Disable all options immediately
-            document.querySelectorAll('.option-item').forEach(item => {
-                item.classList.add('disabled');
-                item.onclick = null;
+            document.querySelectorAll(`#options .option-item`).forEach(item => {
+                const optionValue = item.getAttribute('data-value');
+                item.classList.add('disabled'); // Disable all options
+                item.onclick = null; // Remove click handler
+                
+                const radioInside = item.querySelector('input[type="radio"]');
+                if(radioInside) radioInside.disabled = true;
+
+
+                if (optionValue === correctAnswer) {
+                    item.classList.add('correct');
+                } else if (optionValue === selectedAnswerKey && !isCorrect) {
+                    item.classList.add('incorrect');
+                }
             });
+        }
 
-            // Update score immediately
-            if (isCorrect) {
-                currentScore++;
-                updateScore(currentScore);
+
+        function selectAnswer(selectedAnswerKey) {
+            const question = questions[currentQuestionIndex];
+            
+            userAnswers[currentQuestionIndex] = selectedAnswerKey; // Store the answer
+            
+            // Recalculate score
+            currentScore = 0;
+            for (let i = 0; i < totalQuestions; i++) {
+                if (userAnswers.hasOwnProperty(i) && questions[i] && userAnswers[i] === questions[i].correct_answer) {
+                    currentScore++;
+                }
             }
-
-            // Show correct/incorrect answers with smooth animation
-            setTimeout(() => {
-                document.querySelectorAll('.option-item').forEach(item => {
-                    const optionValue = item.getAttribute('data-value');
-
-                    if (optionValue === correctAnswer) {
-                        item.classList.add('correct');
-                    } else if (optionValue === selectedAnswer && !isCorrect) {
-                        item.classList.add('incorrect');
-                    }
-                });
-
-                // Show next button
-                setTimeout(() => {
-                    nextButton.style.display = 'block';
-                    nextButton.classList.add('fade-in');
-                }, 200);
-            }, 100);
+            updateScoreDisplay();
+            updateProgress();
+            showAnswerFeedback(selectedAnswerKey); // Show visual feedback on options and disable them
+            renderQuestionList(); // Re-render the list to reflect new answer status
         }
 
-        function nextQuestion() {
-            // Add slide out animation
-            quizScreen.classList.add('slide-out-left');
+        // Removed nextQuestion function
 
-            setTimeout(() => {
-                currentQuestionIndex++;
-                displayQuestion();
-
-                // Remove old animation and add slide in
-                quizScreen.classList.remove('slide-out-left');
-                quizScreen.classList.add('slide-in-right');
-
-                // Clean up animation class
-                setTimeout(() => {
-                    quizScreen.classList.remove('slide-in-right');
-                }, 300);
-            }, 300);
+        function showSubmitConfirmation() {
+            submitConfirmationModal.style.display = 'block';
         }
+
+        function cancelSubmit() {
+            submitConfirmationModal.style.display = 'none';
+        }
+
+        function confirmSubmit() {
+            submitConfirmationModal.style.display = 'none';
+            showResult();
+        }
+
 
         async function showResult() {
-            // Calculate results locally
-            const percentage = Math.round((currentScore / totalQuestions) * 100);
+            // Final score calculation (already done by selectAnswer, but can be re-verified)
+            let finalCalculatedScore = 0;
+            for (let i = 0; i < totalQuestions; i++) {
+                if (userAnswers.hasOwnProperty(i) && questions[i] && userAnswers[i] === questions[i].correct_answer) {
+                    finalCalculatedScore++;
+                }
+            }
+            currentScore = finalCalculatedScore; // Ensure currentScore is the final one
+            updateScoreDisplay(); // Update score on quiz screen just in case, though it's about to hide
 
-            // Update UI immediately
+            const percentage = totalQuestions > 0 ? Math.round((currentScore / totalQuestions) * 100) : 0;
+
             document.getElementById('finalScore').textContent = currentScore;
-            document.getElementById('totalQuestions').textContent = totalQuestions;
+            // totalQuestionsResultDisplay is already set at startQuiz
             document.getElementById('percentage').textContent = percentage;
 
-            // Hiển thị thông báo dựa trên kết quả
-            const resultMessage = document.getElementById('resultMessage');
-
+            const resultMessageEl = document.getElementById('resultMessage');
             if (percentage >= 90) {
-                resultMessage.innerHTML = '🌟 Xuất sắc! Bạn thật tuyệt vời!';
-                resultMessage.style.color = '#38a169';
+                resultMessageEl.innerHTML = '🌟 Xuất sắc! Bạn thật tuyệt vời!';
+                resultMessageEl.style.color = '#38a169';
             } else if (percentage >= 80) {
-                resultMessage.innerHTML = '🎊 Rất tốt! Bạn đã làm rất tốt!';
-                resultMessage.style.color = '#3182ce';
+                resultMessageEl.innerHTML = '🎊 Rất tốt! Bạn đã làm rất tốt!';
+                resultMessageEl.style.color = '#3182ce';
             } else if (percentage >= 70) {
-                resultMessage.innerHTML = '👍 Tốt! Bạn đã nắm được kiến thức cơ bản!';
-                resultMessage.style.color = '#805ad5';
+                resultMessageEl.innerHTML = '👍 Tốt! Bạn đã nắm được kiến thức cơ bản!';
+                resultMessageEl.style.color = '#805ad5';
             } else if (percentage >= 60) {
-                resultMessage.innerHTML = '📚 Khá ổn! Hãy ôn tập thêm nhé!';
-                resultMessage.style.color = '#d69e2e';
+                resultMessageEl.innerHTML = '📚 Khá ổn! Hãy ôn tập thêm nhé!';
+                resultMessageEl.style.color = '#d69e2e';
             } else {
-                resultMessage.innerHTML = '💪 Hãy cố gắng hơn! Đừng bỏ cuộc!';
-                resultMessage.style.color = '#e53e3e';
+                resultMessageEl.innerHTML = '💪 Hãy cố gắng hơn! Đừng bỏ cuộc!';
+                resultMessageEl.style.color = '#e53e3e';
             }
+            
+            // Populate detailed results
+            resultDetailsContainer.innerHTML = '<h3>📝 Chi tiết bài làm</h3>';
+            questions.forEach((q, index) => {
+                const detailDiv = document.createElement('div');
+                detailDiv.classList.add('result-question');
+                
+                let userAnswerText = "Chưa trả lời";
+                let userAnswerClass = "";
+                const userAnswerKey = userAnswers[index];
 
-            // Show result screen with smooth transition
-            quizScreen.classList.add('slide-out-left');
+                if (userAnswerKey !== undefined) {
+                    userAnswerText = `${userAnswerKey}. ${q.options[userAnswerKey]}`;
+                    if (userAnswerKey === q.correct_answer) {
+                        userAnswerClass = "correct";
+                    } else {
+                        userAnswerClass = "incorrect";
+                    }
+                }
+
+                detailDiv.innerHTML = `
+                    <p><strong>Câu ${index + 1}:</strong> ${q.question_content}</p>
+                    <p>Câu trả lời của bạn: <span class="user-answer ${userAnswerClass}">${userAnswerText}</span></p>
+                    ${userAnswerKey !== q.correct_answer ? `<p>Đáp án đúng: <span class="correct-answer-text">${q.correct_answer}. ${q.options[q.correct_answer]}</span></p>` : ''}
+                `;
+                resultDetailsContainer.appendChild(detailDiv);
+            });
+
+
+            quizMainContent.classList.add('slide-out-left'); // Animate quiz content out
+            // Hide sidebar immediately or animate it too if desired
+            document.querySelector('.question-list-sidebar').style.display = 'none';
+
 
             setTimeout(() => {
                 quizScreen.style.display = 'none';
                 resultScreen.style.display = 'block';
                 resultScreen.classList.add('slide-in-right');
+                
+                quizMainContent.classList.remove('slide-out-left'); // Clean up animation
 
-                // Clean up animation class
                 setTimeout(() => {
                     resultScreen.classList.remove('slide-in-right');
                 }, 300);
             }, 300);
 
-            // Send final score to server in background (optional)
             try {
                 await fetch('/api/submit_final_score', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+                    headers: { 'Content-Type': 'application/json', },
                     body: JSON.stringify({
                         score: currentScore,
                         total_questions: totalQuestions,
-                        percentage: percentage
+                        percentage: percentage,
+                        answers: userAnswers // Optionally send detailed answers
                     })
                 });
             } catch (error) {
-                console.log('Could not save score to server:', error);
-                // Don't show error to user since this is optional
+                console.warn('Could not save score to server:', error);
             }
         }
 
         async function restartQuiz() {
             showLoading();
+            // No need to call /api/reset_quiz if all state is client-side or re-fetched
+            // If server-side session needs reset, then keep the fetch call.
+            // For now, assuming client-side reset is sufficient for a "Làm lại"
+            
+            resultScreen.classList.add('slide-out-left');
+            
+            setTimeout(() => {
+                resultScreen.style.display = 'none';
+                startScreen.style.display = 'block';
+                startScreen.classList.remove('slide-out-left'); // Ensure no conflicting animations
+                startScreen.classList.add('slide-in-right');
 
-            try {
-                const response = await fetch('/api/reset_quiz', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    }
-                });
+                // Reset variables for a fresh start
+                questions = [];
+                userAnswers = {};
+                currentQuestionIndex = 0;
+                currentScore = 0;
+                totalQuestions = 0; // This will be re-fetched by startQuiz
+                currentQuestionListPage = 1;
 
-                if (response.ok) {
-                    // Smooth transition back to start
-                    resultScreen.classList.add('slide-out-left');
+                // Clear dynamic content
+                questionListItemsContainer.innerHTML = '';
+                optionsContainer.innerHTML = '';
+                resultDetailsContainer.innerHTML = '<h3>📝 Chi tiết bài làm</h3>';
+                progressBar.style.width = '0%';
+                progressText.textContent = `0/{{ total_questions }}`; // Reset to placeholder
+                currentScoreDisplay.textContent = '0';
+                
+                // Update total questions display on start screen (might be dynamic from server)
+                // totalQuestionsDisplayStart.textContent = "{{ total_questions }}"; // Or fetch again
 
-                    setTimeout(() => {
-                        resultScreen.style.display = 'none';
-                        startScreen.style.display = 'block';
-                        startScreen.classList.add('slide-in-right');
+                // Show sidebar again when quiz starts
+                document.querySelector('.question-list-sidebar').style.display = 'block';
 
-                        // Reset variables
-                        currentQuestionIndex = 0;
-                        currentScore = 0;
-                        answered = false;
 
-                        // Clean up animation
-                        setTimeout(() => {
-                            startScreen.classList.remove('slide-in-right');
-                            resultScreen.classList.remove('slide-out-left');
-                        }, 300);
-                    }, 300);
-                } else {
-                    throw new Error('Không thể reset quiz');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                showError('Lỗi khi reset quiz. Vui lòng thử lại!');
-            } finally {
-                hideLoading();
-            }
+                setTimeout(() => {
+                    startScreen.classList.remove('slide-in-right');
+                    resultScreen.classList.remove('slide-out-left');
+                    hideLoading();
+                    // Do not call startQuiz() here, let user click "Bắt đầu"
+                }, 300);
+            }, 300);
         }
 
         // Initialize app when page loads
         document.addEventListener('DOMContentLoaded', function() {
+            // Set initial total questions from template if available, will be overwritten by API
+            const initialTotal = parseInt("{{ total_questions }}", 10) || 0;
+            totalQuestionsDisplayStart.textContent = initialTotal;
+            totalQuestionsQuizDisplay.textContent = initialTotal;
+            totalQuestionsResultDisplay.textContent = initialTotal;
+            progressText.textContent = `0/${initialTotal}`;
+
+
             // Clean up any animation classes after page load
             setTimeout(() => {
                 document.querySelectorAll('.fade-in, .slide-in-right, .slide-out-left').forEach(el => {
@@ -711,7 +1107,5 @@
             }, 500);
         });
     </script>
-</body>
-</html>
 </body>
 </html>
