@@ -460,55 +460,118 @@
             top: 0;
             width: 100%;
             height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.6);
-            backdrop-filter: blur(5px);
+            overflow: auto; /* Allows scrolling if content is too tall, though modal-content should handle its own if needed */
+            background-color: rgba(30, 41, 59, 0.8); /* Darker, more modern overlay */
+            backdrop-filter: blur(8px);
+            /* display: flex; /* REMOVED - This will be set by JS to 'flex' when shown */
+            align-items: center; /* Vertical center (applies when display is flex) */
+            justify-content: center; /* Horizontal center (applies when display is flex) */
+            opacity: 0; /* Start hidden for animation */
+            transition: opacity 0.3s ease;
+            /* animation: fadeInModalBackground 0.3s ease forwards; /* REMOVED - Handled by transition on .show */
         }
 
+        .modal.show { /* Class to trigger display and animation */
+            opacity: 1;
+        }
+        
+        /* @keyframes fadeInModalBackground { /* REMOVED - No longer needed */
+        /*    from { opacity: 0; }
+        /*    to { opacity: 1; }
+        /* } */
+
         .modal-content {
-            background-color: #fff;
-            margin: 15% auto;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            width: 80%;
-            max-width: 500px;
+            background-color: #ffffff;
+            padding: 2rem 2.5rem; /* Increased padding */
+            border-radius: 16px; /* More rounded corners */
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25), 0 0 0 1px rgba(0,0,0,0.05);
+            width: 90%;
+            max-width: 480px; /* Slightly adjusted max-width */
             text-align: center;
+            transform: scale(0.95); /* Initial state for animation */
+            opacity: 0; /* Initial state for animation */
+            /* REMOVED: animation: zoomInModalContent 0.3s ease 0.1s forwards; */
+        }
+
+        .modal.show .modal-content { /* Animation when .show is added to .modal */
+            /* The transform and opacity properties here are not strictly needed if the animation handles the final state with 'forwards' */
+            /* transform: scale(1); */
+            /* opacity: 1; */
+            animation: zoomInModalContent 0.3s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.1s forwards;
+        }
+
+        @keyframes zoomInModalContent {
+            from {
+                /* transform: scale(0.95); /* Initial state is taken from .modal-content default style */
+                /* opacity: 0; /* Initial state is taken from .modal-content default style */
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
         
         .modal-content h3 {
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-            color: #2d3748;
+            margin-bottom: 1rem; /* Adjusted margin */
+            font-size: 1.75rem; /* Larger title */
+            color: #1a202c; /* Darker heading color */
+            font-weight: 600;
+        }
+
+        .modal-content p { /* Style for paragraph text in modal */
+            font-size: 1.1rem;
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 2rem; /* Space before buttons */
         }
 
         .modal-buttons {
-            margin-top: 2rem;
+            margin-top: 1.5rem; /* Adjusted margin */
             display: flex;
-            justify-content: space-around; /* Or flex-end with margin */
+            gap: 1rem; /* Gap between buttons */
+            justify-content: center; /* Center buttons */
         }
         
         .modal-buttons button {
-            padding: 12px 25px;
+            padding: 14px 28px; /* Consistent padding */
             font-size: 1rem;
-            min-width: 120px;
+            font-weight: 600; /* Match other buttons */
+            border-radius: 10px; /* Slightly less rounded than main buttons */
+            min-width: 130px; /* Ensure buttons have good width */
+            transition: all 0.2s ease; /* Smooth transitions */
         }
 
         .modal-buttons .confirm-button {
-            background: linear-gradient(135deg, #38a169, #2f855a); /* Green for confirm */
+            background: linear-gradient(135deg, #48bb78, #38a169); /* Vibrant green */
         }
         .modal-buttons .confirm-button:hover {
-            box-shadow: 0 6px 20px rgba(56, 161, 105, 0.3);
-            filter: brightness(1.05);
+            background: linear-gradient(135deg, #38a169, #2f855a);
+            box-shadow: 0 6px 20px rgba(56, 161, 105, 0.35);
+            transform: translateY(-1px);
         }
 
         .modal-buttons .cancel-button {
-            background: linear-gradient(135deg, #e53e3e, #c53030); /* Red for cancel */
+            background: linear-gradient(135deg, #f56565, #e53e3e); /* Vibrant red */
+            color: white; /* Ensure text is white */
         }
          .modal-buttons .cancel-button:hover {
-            box-shadow: 0 6px 20px rgba(229, 62, 62, 0.3);
-            filter: brightness(1.05);
+            background: linear-gradient(135deg, #e53e3e, #c53030);
+            box-shadow: 0 6px 20px rgba(229, 62, 62, 0.35);
+            transform: translateY(-1px);
         }
+        
+        /* Secondary/alternative cancel button style (less prominent) */
+        .modal-buttons .cancel-button.secondary {
+            background: #edf2f7;
+            color: #4a5568;
+            border: 1px solid #e2e8f0;
+        }
+        .modal-buttons .cancel-button.secondary:hover {
+            background: #e2e8f0;
+            border-color: #cbd5e0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
 
         /* Exam Mode Button */
         .button.exam-button {
@@ -581,12 +644,12 @@
     <div class="quiz-container" id="quizContainer">
         <!-- Màn hình bắt đầu -->
         <div class="start-screen" id="startScreen">
-            <h1>🎯 Trắc nghiệm Online</h1>
-            <p>Chào mừng bạn đến với bài trắc nghiệm kiến thức!</p>
+            <h1>🎯 Phát triển phần mềm hướng dịch vụ</h1>
+            <p>Chào mừng bạn đến với web làm trắc nghiệm của Nguyễn Hữu Quang Hòa!</p>
             <p>📚 Tổng số câu hỏi: <strong id="totalQuestionsDisplayStart">{{ total_questions }}</strong></p>
-            <p>⏱️ Thời gian: Không giới hạn (cho chế độ thường)</p>
+            <p>⏱️ Thời gian: Không giới hạn (cho chế độ Ôn tập)</p>
             <p>🎯 Mỗi câu hỏi chỉ được chọn một lần</p>
-            <button onclick="startQuiz()" class="full-width">🚀 Bắt đầu làm bài (Thường)</button>
+            <button onclick="startQuiz()" class="full-width">🚀 Ôn tập</button>
             <button onclick="startExam()" class="button exam-button full-width">🏆 Làm bài thi (40 câu, 20 phút)</button>
         </div>
 
@@ -1061,18 +1124,30 @@
         // Removed nextQuestion function
 
         function showSubmitConfirmation() {
-            submitConfirmationModal.style.display = 'block';
+            // submitConfirmationModal.style.display = 'block';
+            submitConfirmationModal.style.display = 'flex'; // Use flex for centering
+            setTimeout(() => { // Allow display property to apply before adding class for transition
+                 submitConfirmationModal.classList.add('show');
+            }, 10); // Small delay
         }
 
         function cancelSubmit() {
-            submitConfirmationModal.style.display = 'none';
+            // submitConfirmationModal.style.display = 'none';
+            submitConfirmationModal.classList.remove('show');
+            setTimeout(() => { // Wait for animation to finish
+                 submitConfirmationModal.style.display = 'none';
+            }, 300); // Match animation duration
         }
 
         function confirmSubmit() {
             if (isExamMode) {
                 stopCountdownTimer();
             }
-            submitConfirmationModal.style.display = 'none';
+            // submitConfirmationModal.style.display = 'none';
+            submitConfirmationModal.classList.remove('show');
+             setTimeout(() => {
+                submitConfirmationModal.style.display = 'none';
+            }, 300);
             showResult();
         }
 
