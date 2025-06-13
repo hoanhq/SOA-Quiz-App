@@ -3895,5 +3895,603 @@
         "correct_answer": "A",
         "crawled_by": "B21DCCN031",
         "crawled_at": "2025-06-12 14:19:18"
+    },
+    {
+        "question_number": 37,
+        "question_content": "SOAP message bao gồm các phần nào?",
+        "options": {
+            "A": "Header và Navigation",
+            "B": "Header và Footer",
+            "C": "Header và Sidebar",
+            "D": "Header và Body"
+        },
+        "correct_answer": "D",
+        "crawled_by": "B21DCCN224",
+        "crawled_at": "2025-06-12 14:30:23"
+    },
+    {
+        "question_number": 3,
+        "question_content": "Ví dụ nào dưới đây là không phải  là 1 dịch vụ web đơn giản",
+        "options": {
+            "A": "Xem thông tin thời tiết",
+            "B": "Lấy thông tin tỷ giá",
+            "C": "Lấy thông tin báo giá",
+            "D": "Kiếm tra sự sãn có của một mặt hàng đã biết"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN032",
+        "crawled_at": "2025-06-12 14:40:34"
+    },
+    {
+        "question_number": 5,
+        "question_content": "Dịch vụ tiện ích là gì?",
+        "options": {
+            "A": "Dịch vụ có thể tái sử dụng với bối cảnh chức năng bất khả tri, không được bắt nguồn từ các mô hình và mô hình phân tích kinh doanh",
+            "B": "Dịch vụ có thể tái sử dụng với bối cảnh chức năng khả tri, không được bắt nguồn từ các mô hình và mô hình phân tích kinh doanh",
+            "C": "Dịch vụ có thể tái sử dụng với bối cảnh chức năng bất khả tri, bắt nguồn từ các mô hình và mô hình phân tích kinh doanh",
+            "D": "Dịch vụ có thể tái sử dụng với bối cảnh chức năng khả tri, bắt nguồn từ các mô hình và mô hình phân tích kinh doanh"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN032",
+        "crawled_at": "2025-06-12 14:40:38"
+    },
+    {
+        "question_number": 7,
+        "question_content": "Trong mô hình REST, tài nguyên được đại diện bởi gì?",
+        "options": {
+            "A": "URI (Uniform Resource Identifier)",
+            "B": "URL (Uniform Resource Locator)",
+            "C": "HTML (HyperText Markup Language)",
+            "D": "XML (eXtensible Markup Language)"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN032",
+        "crawled_at": "2025-06-12 14:40:42"
+    },
+    {
+        "question_number": 12,
+        "question_content": "Quy ước đặt tên dịch vụ tiện ích (Utility Service) là gì?",
+        "options": {
+            "A": "Chỉ sử dụng danh từ",
+            "B": "Sử dụng động từ và không lặp lại tên thực thể",
+            "C": "Sử dụng động từ + danh từ",
+            "D": "Sử dụng cấu trúc \"động từ + danh từ\" hoặc chỉ danh từ"
+        },
+        "correct_answer": "D",
+        "crawled_by": "B21DCCN032",
+        "crawled_at": "2025-06-12 14:40:49"
+    },
+    {
+        "question_number": 36,
+        "question_content": "Trong WSDL, một message có thể chứa các kiểu dữ liệu nào?",
+        "options": {
+            "A": "Dữ liệu nguyên thủy",
+            "B": "Complex Type",
+            "C": "Array Type",
+            "D": "Cả A và B"
+        },
+        "correct_answer": "D",
+        "crawled_by": "B21DCCN032",
+        "crawled_at": "2025-06-12 14:41:34"
+    },
+    {
+        "question_number": 1,
+        "question_content": "Với dịch vụ web cho việc đăng ký thành viên,  phương pháp thiết kế nào sao đây tương ứng với dịch vụ có coarse-grained cao nhất?",
+        "options": {
+            "A": "Chia nhỏ thành các dịch vụ như đăng ký, xác thực, quản lý thông tin thành viên",
+            "B": "Gộp các chức năng thành viên thành một dịch vụ duy nhất",
+            "C": "Chia nhỏ mỗi nhóm thông tin tương ứng với một dịch vụ",
+            "D": "Chia thành 2 nhóm dịch vụ  đăng ký và xác thực"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN200",
+        "crawled_at": "2025-06-12 14:51:46"
+    },
+    {
+        "question_number": 36,
+        "question_content": "SOAP sử dụng cơ chế bảo mật nào?",
+        "options": {
+            "A": "OAuth",
+            "B": "SSL/TLS",
+            "C": "WS-Security",
+            "D": "OpenID Connect"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN200",
+        "crawled_at": "2025-06-12 14:52:34"
+    },
+    {
+        "question_number": 11,
+        "question_content": "Mô hình nào được áp dụng khi cần quản lý trạng thái trong các dịch vụ nhiệm vụ để hỗ trợ nguyên tắc Stateless Service?",
+        "options": {
+            "A": "Tất cả các phương án còn lại",
+            "B": "State Repository",
+            "C": "Partial State Deferral",
+            "D": "State Messaging"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN236",
+        "crawled_at": "2025-06-12 15:13:52"
+    },
+    {
+        "question_number": 37,
+        "question_content": "SOAP là viết tắt của từ gì?",
+        "options": {
+            "A": "Simple Object Access Protocol",
+            "B": "Service Object Access Protocol",
+            "C": "Service Oriented Architecture Protocol",
+            "D": "Service Object Architecture Protocol"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN236",
+        "crawled_at": "2025-06-12 15:14:21"
+    },
+    {
+        "question_number": 12,
+        "question_content": "Kết hợp thuộc tính nào là ưa chuộng trong thiết kế hợp đồng dịch vụ Web?",
+        "options": {
+            "A": "style:document + use:literal",
+            "B": "style:document + use:encoded",
+            "C": "style:RPC + use:encoded",
+            "D": "style:RPC + use:literal"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN247",
+        "crawled_at": "2025-06-12 15:24:38"
+    },
+    {
+        "question_number": 36,
+        "question_content": "Phần tử nào trong WSDL định nghĩa các kiểu dữ liệu sử dụng trong phương thức?",
+        "options": {
+            "A": "input",
+            "B": "output",
+            "C": "types",
+            "D": "operation"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN247",
+        "crawled_at": "2025-06-12 15:25:16"
+    },
+    {
+        "question_number": 11,
+        "question_content": "Điều gì cần cân nhắc khi sử dụng không gian tên trong tài liệu WSDL?",
+        "options": {
+            "A": "Tăng số lượng không gian tên",
+            "B": "Giảm số lượng không gian tên",
+            "C": "Tổ chức không gian tên một cách cẩn thận và xuyên suốt tài liệu WSDL",
+            "D": "Sử dụng không gian tên riêng"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN307",
+        "crawled_at": "2025-06-12 15:46:23"
+    },
+    {
+        "question_number": 37,
+        "question_content": "Trong WSDL, một message có thể chứa bao nhiêu phần?",
+        "options": {
+            "A": "Không giới hạn",
+            "B": "Tối đa là 20 phần",
+            "C": "Tối đa là 100 phần",
+            "D": "Chỉ một phần"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN307",
+        "crawled_at": "2025-06-12 15:46:59"
+    },
+    {
+        "question_number": 9,
+        "question_content": "Logic khả tri là gì?",
+        "options": {
+            "A": "Logic dành riêng cho một nhiệm vụ có mục đích duy nhất",
+            "B": "Logic dành riêng cho một nhiệm vụ có đa mục đích",
+            "C": "Logic đủ chung  chung, không cụ thể, không liên quan đến một nhiệm vụ gốc cụ thể",
+            "D": "Logic đủ chung chung, không cụ thể, dành cho nhiệm vụ có mục đích duy nhất"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN044",
+        "crawled_at": "2025-06-12 15:57:17"
+    },
+    {
+        "question_number": 10,
+        "question_content": "Điều gì có thể xảy ra nếu hợp đồng dịch vụ có mức độ chi tiết thô (coarse)?",
+        "options": {
+            "A": "Nó cung cấp nhiều khả năng tái sử dụng",
+            "B": "Nó áp đặt việc xử lý hoặc trao đổi dữ liệu dư thừa và khả năng tái sử dụng ít",
+            "C": "Nó cải thiện hiệu năng",
+            "D": "Nó hạn chế khả năng tương tác"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN044",
+        "crawled_at": "2025-06-12 15:57:18"
+    },
+    {
+        "question_number": 12,
+        "question_content": "Chức năng chính của dịch vụ tác vụ trong thiết kế hướng dịch vụ là gì?",
+        "options": {
+            "A": "Xử lý các chức năng xử lý cấp thấp",
+            "B": "Điều phối một thành phần dịch vụ cơ sở",
+            "C": "Quản lý kết nối cơ sở dữ liệu",
+            "D": "Xử lý phân tích dữ liệu theo thời gian thực"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN332",
+        "crawled_at": "2025-06-12 16:08:09"
+    },
+    {
+        "question_number": 32,
+        "question_content": "Dịch vụ dựa trên SOAP hay REST tuẩn thủ đặc tả các phương thức của HTTP?",
+        "options": {
+            "A": "SOAP",
+            "B": "REST",
+            "C": "Tùy thuộc vào cách triển khai",
+            "D": "SOAP và REST đều sử dụng động từ HTTP"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN332",
+        "crawled_at": "2025-06-12 16:08:31"
+    },
+    {
+        "question_number": 36,
+        "question_content": "Trong SOAP, phần Header dùng để làm gì?",
+        "options": {
+            "A": "Chứa các thông tin bổ sung về message",
+            "B": "Chứa nội dung chính của message",
+            "C": "Chứa các tài nguyên của web service",
+            "D": "Chứa tham số chính của dịch vụ web"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN332",
+        "crawled_at": "2025-06-12 16:08:37"
+    },
+    {
+        "question_number": 36,
+        "question_content": "Trong WSDL, phần Message dùng để làm gì?",
+        "options": {
+            "A": "Định nghĩa các  kiểu và cấu trúc dữ liệu",
+            "B": "Chứa thông tin về tài nguyên của web service",
+            "C": "Chứa các thông tin bổ sung về message",
+            "D": "Chứa các thư viện lập trình"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN368",
+        "crawled_at": "2025-06-12 16:52:10"
+    },
+    {
+        "question_number": 2,
+        "question_content": "Ví dụ nào dưới đây là 1 thuộc tính chức năng của dịch vụ web là gì?",
+        "options": {
+            "A": "Cung cấp khả năng tra cứu thông tin",
+            "B": "Tạo ra giao diện đẹp mắt",
+            "C": "Lưu trữ dữ liệu trên đám mây",
+            "D": "Xây dựng mạng xã hội"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN380",
+        "crawled_at": "2025-06-12 17:13:18"
+    },
+    {
+        "question_number": 11,
+        "question_content": "Tại sao quá trình thiết kế Task Service thường yêu cầu ít nỗ lực hơn so với các mô hình dịch vụ khác?",
+        "options": {
+            "A": "Vì chúng sử dụng nhiều công nghệ tiên tiến",
+            "B": "Vì chúng có nhiều nhân viên làm việc cùng lúc",
+            "C": "Vì chúng chỉ yêu cầu một thao tác để khởi động một quy trình logic",
+            "D": "Vì chúng không cần kiểm tra và giám sát"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN380",
+        "crawled_at": "2025-06-12 17:13:26"
+    },
+    {
+        "question_number": 12,
+        "question_content": "Thông điệp SOAP được xử lý trong phần nào của thông điệp SOAP?",
+        "options": {
+            "A": "Header",
+            "B": "Body",
+            "C": "Footer",
+            "D": "Envelope"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN403",
+        "crawled_at": "2025-06-12 17:45:35"
+    },
+    {
+        "question_number": 37,
+        "question_content": "Trong SOAP,  Envelope được sử dụng để làm gì?",
+        "options": {
+            "A": "Bao bọc toàn bộ message",
+            "B": "Chứa các tham số đầu vào của phương thức",
+            "C": "Chứa các thông tin về tài nguyên của web service",
+            "D": "Chứa các thông tin bổ sung về message"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN439",
+        "crawled_at": "2025-06-12 18:07:58"
+    },
+    {
+        "question_number": 36,
+        "question_content": "Phương thức HTTP nào được sử dụng để lấy thông tin resource trong Restful web service?",
+        "options": {
+            "A": "DELETE",
+            "B": "POST",
+            "C": "PUT",
+            "D": "GET"
+        },
+        "correct_answer": "D",
+        "crawled_by": "B21DCCN427",
+        "crawled_at": "2025-06-12 18:18:47"
+    },
+    {
+        "question_number": 2,
+        "question_content": "Một dịch vụ web đơn giản có thể triển khai dưới dạng dịch vụ web phức tạp hay không",
+        "options": {
+            "A": "Không",
+            "B": "Có",
+            "C": "Tuy thuộc vào công nghệ triển khai",
+            "D": "Tùy thuộc vào giao thức triển khai"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN475",
+        "crawled_at": "2025-06-12 18:28:56"
+    },
+    {
+        "question_number": 10,
+        "question_content": "RPC Style trong SOAP tập trung vào gì?",
+        "options": {
+            "A": "Trao đổi tài liệu XML hoàn chỉnh",
+            "B": "Gọi các hàm từ xa với các tham số",
+            "C": "Gửi và nhận email",
+            "D": "Quản lý file hệ thống"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN475",
+        "crawled_at": "2025-06-12 18:29:03"
+    },
+    {
+        "question_number": 11,
+        "question_content": "Việc tạo các sơ đồ XML riêng cho từng thành phần dịch vụ giúp đạt được điều gì?",
+        "options": {
+            "A": "Tăng tính độc lập và khả năng tái sử dụng của từng thành phần dịch vụ",
+            "B": "Giảm thời gian triển khai dịch vụ",
+            "C": "Đảm bảo rằng tất cả các dịch vụ đều tuân theo cùng một chuẩn",
+            "D": "Tăng hiệu suất xử lý của dịch vụ"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN475",
+        "crawled_at": "2025-06-12 18:29:04"
+    },
+    {
+        "question_number": 36,
+        "question_content": "Trong WSDL, phần binding dùng để làm gì?",
+        "options": {
+            "A": "Chứa các thư viện lập trình",
+            "B": "Chứa các tài nguyên của web service",
+            "C": "Mô tả sự thực thi của 1 giao diện",
+            "D": "Chứa các tài liệu hướng dẫn"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN080",
+        "crawled_at": "2025-06-12 19:13:11"
+    },
+    {
+        "question_number": 36,
+        "question_content": "Trong WSDL, phần message dùng để làm gì?",
+        "options": {
+            "A": "Mô tả kiểu dữ liệu và nội dung của một message được gửi hoặc nhận",
+            "B": "Chứa các tài nguyên của web service",
+            "C": "Chứa các thư viện lập trình",
+            "D": "Chứa các tài liệu hướng dẫn"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN524",
+        "crawled_at": "2025-06-12 19:24:10"
+    },
+    {
+        "question_number": 10,
+        "question_content": "Điều gì cần cân nhắc khi thiết kế dịch vụ để đảm bảo tính nhất quán và chuẩn hóa?",
+        "options": {
+            "A": "Sử dụng kiểu dữ liệu riêng",
+            "B": "Giảm độ chi tiết của API",
+            "C": "Tăng số lượng thao tác",
+            "D": "Áp dụng các nguyên tắc hướng dịch vụ liên quan đến hợp đồng"
+        },
+        "correct_answer": "D",
+        "crawled_by": "B21DCCN535",
+        "crawled_at": "2025-06-12 19:34:26"
+    },
+    {
+        "question_number": 11,
+        "question_content": "Tại sao việc xác định mức độ chi tiết dịch vụ (Service Granularity) quan trọng trong quá trình thiết kế?",
+        "options": {
+            "A": "Quyết định mức độ chi tiết của logic xác thực",
+            "B": "Xác định phạm vi chức năng của dịch vụ",
+            "C": "Ảnh hưởng đến mô hình hóa và thiết kế vật lý của hợp đồng dịch vụ",
+            "D": "Tất cả đều đúng"
+        },
+        "correct_answer": "D",
+        "crawled_by": "B21DCCN535",
+        "crawled_at": "2025-06-12 19:34:27"
+    },
+    {
+        "question_number": 37,
+        "question_content": "Phần tử nào trong WSDL mô tả kết quả trả về của một phương thức?",
+        "options": {
+            "A": "input",
+            "B": "output",
+            "C": "types",
+            "D": "operation"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN092",
+        "crawled_at": "2025-06-12 19:46:04"
+    },
+    {
+        "question_number": 10,
+        "question_content": "Thuộc tính use với giá trị \"literal\" đại diện cho việc sử dụng hệ thống kiểu dữ liệu nào?",
+        "options": {
+            "A": "Hệ thống kiểu dữ liệu riêng của SOAP",
+            "B": "Hệ thống kiểu dữ liệu XML Schema",
+            "C": "Hệ thống kiểu dữ liệu WSDL",
+            "D": "Hệ thống kiểu dữ liệu RPC"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN547",
+        "crawled_at": "2025-06-12 19:56:20"
+    },
+    {
+        "question_number": 37,
+        "question_content": "WSDL được sử dụng để làm gì?",
+        "options": {
+            "A": "Phát triển ứng dụng web",
+            "B": "Mô tả các web service và cung cấp thông tin về chúng",
+            "C": "Quản lý cơ sở dữ liệu",
+            "D": "Phát triển ứng dụng di động"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN547",
+        "crawled_at": "2025-06-12 19:56:44"
+    },
+    {
+        "question_number": 32,
+        "question_content": "Dịch vụ dựa trên SOAP hay REST dễ phát triển hơn?",
+        "options": {
+            "A": "SOAP",
+            "B": "REST",
+            "C": "Tùy thuộc vào kỹ năng của nhà phát triển cụ thể",
+            "D": "SOAP và REST đều dễ phát triển"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN548",
+        "crawled_at": "2025-06-12 20:07:29"
+    },
+    {
+        "question_number": 12,
+        "question_content": "Trong Utility Service Design, nguyên tắc \"Tái sử dụng Dịch vụ\" nhấn mạnh vào điều gì?",
+        "options": {
+            "A": "Xây dựng microservice như một dịch vụ web dựa trên SOAP",
+            "B": "Tạo ra API phong phú",
+            "C": "Phát triển dịch vụ tiện ích linh hoạt và tái sử dụng",
+            "D": "Thực hiện các chức năng xử lý cấp thấp"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN560",
+        "crawled_at": "2025-06-12 20:17:55"
+    },
+    {
+        "question_number": 36,
+        "question_content": "Phương thức HTTP nào được sử dụng để tạo mới một resource trong Restful web service?",
+        "options": {
+            "A": "PUT",
+            "B": "GET",
+            "C": "POST",
+            "D": "DELETE"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN583",
+        "crawled_at": "2025-06-12 20:50:51"
+    },
+    {
+        "question_number": 10,
+        "question_content": "Giá trị của thuộc tính style trong SOAP có thể là gì?",
+        "options": {
+            "A": "Document",
+            "B": "RPC",
+            "C": "Cả A và B đều sai",
+            "D": "Cả A và B đều đúng"
+        },
+        "correct_answer": "D",
+        "crawled_by": "B21DCCN631",
+        "crawled_at": "2025-06-12 21:11:51"
+    },
+    {
+        "question_number": 11,
+        "question_content": "Giá trị của thuộc tính use trong SOAP có thể là gì?",
+        "options": {
+            "A": "Document",
+            "B": "RPC",
+            "C": "Cả A và B đều sai",
+            "D": "Cả A và B đều đúng"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN631",
+        "crawled_at": "2025-06-12 21:11:54"
+    },
+    {
+        "question_number": 12,
+        "question_content": "Hướng dẫn nào dưới đây giúp giải quyết vấn đề về mức độ chi tiết của hợp đồng dịch vụ?",
+        "options": {
+            "A": "Hiểu rõ giới hạn hiệu năng của môi trường triển khai mục tiêu",
+            "B": "Cung cấp định nghĩa WSDL thay thế cho dịch vụ Web",
+            "C": "Gán các API có mức độ chi tiết thô cho các dịch vụ được chỉ định là điểm kết hợp giải pháp",
+            "D": "Hỗ trợ phương thức giao tiếp thứ cấp trong kho dịch vụ"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN103",
+        "crawled_at": "2025-06-12 21:44:38"
+    },
+    {
+        "question_number": 36,
+        "question_content": "Trong WSDL, phần Output của một phương thức được định nghĩa để làm gì?",
+        "options": {
+            "A": "Chứa các tài nguyên của web service",
+            "B": "Chứa các tham số đầu vào của phương thức",
+            "C": "Chứa các tham số trả về của phương thức",
+            "D": "Chứa các thông tin bổ sung về message"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN103",
+        "crawled_at": "2025-06-12 21:45:10"
+    },
+    {
+        "question_number": 10,
+        "question_content": "Sử dụng tài liệu WSDL để làm gì?",
+        "options": {
+            "A": "Để xác định các mô-đun cho các loại, hoạt động và liên kết có thể chia sẻ trên WSDL",
+            "B": "Để tách riêng các mô-đun XML Schema",
+            "C": "Để tạo ra một kho lưu trữ trung tâm của schema",
+            "D": "Để xác định các tài liệu WSDL chính tùy chỉnh"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN680",
+        "crawled_at": "2025-06-12 22:27:36"
+    },
+    {
+        "question_number": 36,
+        "question_content": "Để sử dụng SOAP, ta cần phải làm gì trước tiên?",
+        "options": {
+            "A": "Kết nối tới một cơ sở dữ liệu",
+            "B": "Mở một trình duyệt web",
+            "C": "Định nghĩa một tài liệu WSDL",
+            "D": "Tạo ra một đối tượng JavaScript"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN405",
+        "crawled_at": "2025-06-13 04:17:20"
+    },
+    {
+        "question_number": 10,
+        "question_content": "Các phương thức nào thường được sử dụng trong các hợp đồng dịch vụ thực thể REST?",
+        "options": {
+            "A": "POST và PATCH",
+            "B": "GET, PUT, DELETE",
+            "C": "CONNECT và OPTIONS",
+            "D": "TRACE và HEAD"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN321",
+        "crawled_at": "2025-06-13 07:51:49"
+    },
+    {
+        "question_number": 37,
+        "question_content": "Trong WSDL, phần Fault của một phương thức được định nghĩa để làm gì?",
+        "options": {
+            "A": "Chứa các thông tin bổ sung về message",
+            "B": "Chứa các tham số trả về của phương thức",
+            "C": "Chứa các tài nguyên của web service",
+            "D": "Chứa các thông tin về lỗi xảy ra trong quá trình thực thi phương thức"
+        },
+        "correct_answer": "D",
+        "crawled_by": "B21DCCN514",
+        "crawled_at": "2025-06-13 08:27:23"
     }
 ]
