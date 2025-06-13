@@ -4493,5 +4493,31 @@
         "correct_answer": "D",
         "crawled_by": "B21DCCN514",
         "crawled_at": "2025-06-13 08:27:23"
+    },
+    {
+        "question_number": 36,
+        "question_content": "SOAP sử dụng cấu trúc dữ liệu nào để truyền thông tin?",
+        "options": {
+            "A": "HTML",
+            "B": "JSON",
+            "C": "Envelope",
+            "D": "CSV"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 12:00:23"
+    },
+    {
+        "question_number": 20,
+        "question_content": "Không tìm thấy câu hỏi",
+        "options": {
+            "A": "",
+            "B": "",
+            "C": "",
+            "D": ""
+        },
+        "correct_answer": "",
+        "crawled_by": "B21DCCN753",
+        "crawled_at": "2025-06-13 14:08:24"
     }
 ]
