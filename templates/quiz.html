@@ -240,23 +240,32 @@
         .start-screen, .result-screen {
             text-align: center;
             transition: all 0.3s ease;
+            width: 100%; /* Ensure start/result screens take full width */
         }
 
         .quiz-screen {
-            display: none; /* Initially hidden */
-            grid-template-columns: 2fr 1fr; /* Two columns: question area and list area */
-            gap: 2rem; /* Gap between columns */
+            display: none; /* Initially hidden - THIS IS THE PRIMARY STATE */
+            /* display: flex; */ /* REMOVE this duplicate, JS will set it to flex when quiz starts */
+            align-items: stretch; 
+            gap: 2rem; 
             transition: all 0.3s ease;
+            width: 100%; /* Ensure quiz screen also takes full width when visible */
         }
         
+        .quiz-main-content {
+            flex: 2; /* Main content takes up more space */
+            display: flex;
+            flex-direction: column; /* Manage children like progress, question, button vertically */
+        }
+
         .question-list-sidebar {
             background: #f8fafc;
             padding: 1.5rem;
             border-radius: 12px;
             border: 1px solid #e2e8f0;
-            height: fit-content; /* Adjust height as needed */
-            max-height: 70vh; /* Example max height */
-            overflow-y: auto;
+            flex: 1; /* Sidebar takes up less space */
+            display: flex; /* Enable flex for its children */
+            flex-direction: column; /* Stack title, list, pagination vertically */
         }
 
         .question-list-sidebar h3 {
@@ -269,6 +278,9 @@
             list-style: none;
             padding: 0;
             margin: 0;
+            flex-grow: 1; /* Allows the list to take available vertical space in the sidebar */
+            overflow-y: auto; /* Enables scrolling for the list items if they overflow */
+            min-height: 0; /* Important for flex children that scroll */
         }
 
         .question-list-item {
@@ -602,11 +614,13 @@
         /* Responsive design */
         @media (max-width: 992px) { /* Adjusted breakpoint for two-column layout */
             .quiz-screen {
-                grid-template-columns: 1fr; /* Stack columns on smaller screens */
+                flex-direction: column; /* Stack columns on smaller screens */
+                align-items: stretch; /* Continue to stretch items, now in a single column */
             }
             .question-list-sidebar {
                 margin-top: 2rem; /* Add some space when stacked */
-                max-height: 40vh;
+                max-height: 40vh; /* This max-height is appropriate for stacked view */
+                /* flex-basis: auto; */ /* Optionally reset flex-basis if needed */
             }
         }
 
@@ -981,7 +995,7 @@
 
                     startScreen.style.display = 'none';
                     resultScreen.style.display = 'none'; 
-                    quizScreen.style.display = 'grid'; 
+                    quizScreen.style.display = 'flex'; // Ensure this is set to flex
                     quizMainContent.classList.remove('slide-out-left');
                     quizMainContent.classList.add('slide-in-right');
                     
