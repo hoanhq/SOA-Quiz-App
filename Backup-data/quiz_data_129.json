@@ -1,0 +1,496 @@
+[
+    {
+        "question_number": 34,
+        "question_content": "Cho đoạn mã nguồn:\n\r\r@Path(\"/orders\")\npublic class OrderResource {\n\n    @GET\n    @Produces(MediaType.APPLICATION_JSON)\n    public Response getOrders() {\n        // Get all orders from the database.\n        return Response.ok(orders).build();\n    }\n\n    @POST\n    @Consumes(MediaType.APPLICATION_JSON)\n    public Response createOrder(Order order) {\n        // Create a new order in the database.\n        return Response.ok().build();\n    }\n\n    @PUT\n    @Path(\"{id}\")\n    @Consumes(MediaType.APPLICATION_JSON)\n    public Response updateOrder(@PathParam(\"id\") long id, Order order) {\n        // Update the order with the given ID in the database.\n        return Response.ok().build();\n    }\n\n    @DELETE\n    @Path(\"{id}\")\n    public Response deleteOrder(@PathParam(\"id\") long id) {\n        // Delete the order with the given ID from the database.\n        return Response.ok().build();\n    }\n\n}\n\r\rĐường dẫn của phương thức deleteOrder() là gì?",
+        "options": {
+            "A": "/orders",
+            "B": "/order",
+            "C": "/orders/{id}",
+            "D": "/orders/delete"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:58:48"
+    },
+    {
+        "question_number": 32,
+        "question_content": "Dịch vụ dựa trên SOAP hay REST nhanh hơn?",
+        "options": {
+            "A": "SOAP",
+            "B": "REST",
+            "C": "Tùy thuộc vào cách triển khai",
+            "D": "SOAP và REST có cùng tốc độ"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:58:51"
+    },
+    {
+        "question_number": 11,
+        "question_content": "Mức độ chi tiết dữ liệu (Data Granularity) thể hiện cho điều gì?",
+        "options": {
+            "A": "Phạm vi chức năng của dịch vụ",
+            "B": "Số lượng logic liên quan đến dịch vụ",
+            "C": "Lượng dữ liệu được xử lý",
+            "D": "Ngữ cảnh chức năng tổng thể của dịch vụ"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:58:52"
+    },
+    {
+        "question_number": 30,
+        "question_content": "What is the primary challenge when managing transactions in a microservices architecture?",
+        "options": {
+            "A": "Lack of performance",
+            "B": "Lack of scalability",
+            "C": "Distributed nature of services",
+            "D": "Too many logs"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:58:56"
+    },
+    {
+        "question_number": 6,
+        "question_content": "Định nghĩa microservice trong kiến trúc hướng dịch vụ (SOA)?",
+        "options": {
+            "A": "Một dịch vụ bất khả tri thường có phạm vi chức năng nhỏ bao gồm logic với các yêu cầu xử lý và triển khai cụ thể",
+            "B": "Một dịch vụ không bất khả tri thường có phạm vi chức năng nhỏ bao gồm logic với các yêu cầu xử lý và triển khai cụ thể",
+            "C": "Một dịch vụ lớn được chia nhỏ thành các thành phần nhỏ hơn",
+            "D": "Một dịch vụ được thiết kế để chạy trên nhiều máy chủ khác nhau"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:58:58"
+    },
+    {
+        "question_number": 17,
+        "question_content": "What is a common challenge in microservices data consistency?",
+        "options": {
+            "A": "High query speed",
+            "B": "Join queries",
+            "C": "Distributed transactions",
+            "D": "Using MongoDB"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:59:01"
+    },
+    {
+        "question_number": 5,
+        "question_content": "Microservice có tính tự chủ cao nhằm mục đích gì?",
+        "options": {
+            "A": "Tăng cường tính linh hoạt của hệ thống",
+            "B": "Giảm thiểu sự phụ thuộc vào các tài nguyên bên ngoài",
+            "C": "Đảm bảo tính bảo mật của dịch vụ",
+            "D": "Tạo điều kiện cho việc triển khai dư thừa"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:59:04"
+    },
+    {
+        "question_number": 7,
+        "question_content": "Trong kiến trúc hướng dịch vụ, REST (Representational State Transfer) là gì?",
+        "options": {
+            "A": "Một giao thức truyền tải dữ liệu giữa các dịch vụ",
+            "B": "Một mô hình kiến trúc phục vụ cho việc truyền tải các tài nguyên qua giao thức HTTP",
+            "C": "Một phương pháp tạo ra các dịch vụ mạng phân tán",
+            "D": "Một công nghệ dựa trên SOAP để tạo ra các dịch vụ web"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:59:07"
+    },
+    {
+        "question_number": 4,
+        "question_content": "Các giai đoạn đầu tiên khi phân tích kho dịch vụ là gì?",
+        "options": {
+            "A": "Define Technology Architecture",
+            "B": "Define Enterprise Business Models",
+            "C": "Perform Service-Oriented Analysis",
+            "D": "Define Service Inventory Blueprint"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:59:09"
+    },
+    {
+        "question_number": 20,
+        "question_content": "What challenge is commonly associated with deploying multiple microservices simultaneously?",
+        "options": {
+            "A": "Slow startup time",
+            "B": "Increased service discovery traffic",
+            "C": "Deployment sequencing and coordination",
+            "D": "Lack of logging"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:59:10"
+    },
+    {
+        "question_number": 1,
+        "question_content": "Giữa RPC-Style và Message-Style cái nào phù hợp hơn cho dịch vụ web đơn giản?",
+        "options": {
+            "A": "Cả RPC-Style và Message-Style không phù hợp cho dịch vụ web đơn giản",
+            "B": "Message-Style phù hợp cho dịch vụ web đơn giản",
+            "C": "Cả RPC-Style và Message-Style đều phù hợp cho dịch vụ web đơn giản",
+            "D": "RPC-Style phù hợp cho dịch vụ web đơn giản"
+        },
+        "correct_answer": "D",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:59:12"
+    },
+    {
+        "question_number": 8,
+        "question_content": "Phương thức HTTP nào thường được sử dụng để truy xuất tài nguyên từ dịch vụ RESTful?",
+        "options": {
+            "A": "GET",
+            "B": "PUT",
+            "C": "POST",
+            "D": "DELETE"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:59:15"
+    },
+    {
+        "question_number": 37,
+        "question_content": "Cấu trúc dữ liệu phổ biến để truyền thông tin trong Restful web service là gì?",
+        "options": {
+            "A": "XML",
+            "B": "JSON",
+            "C": "HTML",
+            "D": "CSV"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:59:17"
+    },
+    {
+        "question_number": 14,
+        "question_content": "What is the main characteristic of synchronous communication between microservices?",
+        "options": {
+            "A": "Messages are queued before delivery",
+            "B": "Requests are fire-and-forget",
+            "C": "Client waits for immediate response",
+            "D": "Data is transferred in batch"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:59:20"
+    },
+    {
+        "question_number": 39,
+        "question_content": "Cho định nghĩa WSDL: \n\r\r<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<definitions xmlns=\"http://schemas.xmlsoap.org/wsdl/\" xmlns:tns=\"http://www.example.com/accountRegistration\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/wsdl/soap/\" name=\"AccountRegistration\" targetNamespace=\"http://www.example.com/accountRegistration\">\n  <types>\n    <xsd:schema elementFormDefault=\"qualified\" targetNamespace=\"http://www.example.com/accountRegistration\">\n      <xsd:element name=\"Account\">\n        <xsd:complexType>\n          <xsd:sequence>\n            <xsd:element name=\"username\" type=\"xsd:string\"/>\n            <xsd:element name=\"password\" type=\"xsd:string\"/>\n          </xsd:sequence>\n        </xsd:complexType>\n      </xsd:element>\n      <xsd:element name=\"AccountResponse\">\n        <xsd:complexType>\n          <xsd:sequence>\n            <xsd:element name=\"success\" type=\"xsd:boolean\"/>\n          </xsd:sequence>\n        </xsd:complexType>\n      </xsd:element>\n    </xsd:schema>\n  </types>\n  <message name=\"RegisterAccount\">\n    <part name=\"parameters\" element=\"tns:Account\"/>\n  </message>\n  <message name=\"RegisterAccountResponse\">\n    <part name=\"parameters\" element=\"tns:AccountResponse\"/>\n  </message>\n  <portType name=\"AccountRegistrationPortType\">\n    <operation name=\"RegisterAccount\">\n      <input message=\"tns:RegisterAccount\"/>\n      <output message=\"tns:RegisterAccountResponse\"/>\n    </operation>\n  </portType>\n  <binding name=\"AccountRegistrationBinding\" type=\"tns:AccountRegistrationPortType\">\n    <soap:binding transport=\"http://schemas.xmlsoap.org/soap/http\"/>\n    <operation name=\"RegisterAccount\">\n      <soap:operation soapAction=\"http://www.example.com/accountRegistration/RegisterAccount\"/>\n      <input>\n        <soap:body use=\"literal\"/>\n      </input>\n      <output>\n        <soap:body use=\"literal\"/>\n      </output>\n    </operation>\n  </binding>\n  <service name=\"AccountRegistrationService\">\n    <port name=\"AccountRegistrationPort\" binding=\"tns:AccountRegistrationBinding\">\n      <soap:address location=\"http://www.example.com/accountRegistration\"/>\n    </port>\n  </service>\n</definitions> \n\r\rThông tin nào được yêu cầu khi gửi dữ liệu đến dịch vụ web?",
+        "options": {
+            "A": "Đầu vào: tên người dùng, mật khẩu, email, số điện thoại. Đầu ra: thành công",
+            "B": "Đầu vào: tên người dùng, mật khẩu, email. Đầu ra: thành công",
+            "C": "Đầu vào: tên người dùng, mật khẩu. Đầu ra: thành công",
+            "D": "Đầu vào: tên người dùng, mật khẩu, email, số điện thoại, địa chỉ. Đầu ra: thành công"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:59:23"
+    },
+    {
+        "question_number": 22,
+        "question_content": "What is the purpose of CQRS when used with event sourcing?",
+        "options": {
+            "A": "To execute events faster",
+            "B": "To separate the command model from the read model",
+            "C": "To replicate data to multiple nodes",
+            "D": "To reduce storage cost"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:59:25"
+    },
+    {
+        "question_number": 19,
+        "question_content": "Why is rollback functionality critical in microservices deployment?",
+        "options": {
+            "A": "To increase deployment speed",
+            "B": "To reuse legacy code",
+            "C": "To recover from faulty deployments",
+            "D": "To test performance"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:59:28"
+    },
+    {
+        "question_number": 33,
+        "question_content": "Cho đoạn mã nguồn:\n\r\r@Path(\"/orders\")\npublic class OrderResource {\n\n    @GET\n    @Produces(MediaType.APPLICATION_JSON)\n    public Response getOrders() {\n        // Get all orders from the database.\n        return Response.ok(orders).build();\n    }\n\n    @POST\n    @Consumes(MediaType.APPLICATION_JSON)\n    public Response createOrder(Order order) {\n        // Create a new order in the database.\n        return Response.ok().build();\n    }\n\n    @PUT\n    @Path(\"{id}\")\n    @Consumes(MediaType.APPLICATION_JSON)\n    public Response updateOrder(@PathParam(\"id\") long id, Order order) {\n        // Update the order with the given ID in the database.\n        return Response.ok().build();\n    }\n\n    @DELETE\n    @Path(\"{id}\")\n    public Response deleteOrder(@PathParam(\"id\") long id) {\n        // Delete the order with the given ID from the database.\n        return Response.ok().build();\n    }\n\n}\n\r\rMã trạng thái HTTP của phản hồi từ phương thức getOrders() nếu không có đơn hàng?",
+        "options": {
+            "A": "200",
+            "B": "201",
+            "C": "204",
+            "D": "404"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:59:31"
+    },
+    {
+        "question_number": 31,
+        "question_content": "Nếu không cài đặt gì thêm, SOAP hay REST có thể sử dụng máy chủ caching?",
+        "options": {
+            "A": "SOAP",
+            "B": "REST",
+            "C": "Cả SOAP và REST đều có thể sử dụng máy chủ caching",
+            "D": "Không SOAP và REST đều không thể sử dụng máy chủ caching"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:59:34"
+    },
+    {
+        "question_number": 28,
+        "question_content": "Which database type is often used for read models in microservices?",
+        "options": {
+            "A": "Graph databases for all use cases",
+            "B": "Write-optimized SQL only",
+            "C": "Read-optimized NoSQL or denormalized SQL",
+            "D": "Blockchain ledgers"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:59:36"
+    },
+    {
+        "question_number": 29,
+        "question_content": "What is the key difference between monolithic and microservices-based transaction handling?",
+        "options": {
+            "A": "Monoliths handle distributed state",
+            "B": "Microservices use centralized databases",
+            "C": "Microservices involve distributed transaction context",
+            "D": "Monoliths cannot handle ACID properties"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:59:39"
+    },
+    {
+        "question_number": 13,
+        "question_content": "Which messaging pattern is most suitable for broadcasting events to multiple services?",
+        "options": {
+            "A": "Request-Reply",
+            "B": "Command",
+            "C": "Publish-Subscribe",
+            "D": "Point-to-Point"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:59:42"
+    },
+    {
+        "question_number": 2,
+        "question_content": "Khi nào nên sử dụng dịch vụ fine-grained ?",
+        "options": {
+            "A": "Khi cần cung cấp các chức năng có phạm vi hạn chế",
+            "B": "Khi cần cung cấp các chức năng tổng quát và phổ biến",
+            "C": "Khi cần cung cấp các chức năng rộng lớn và mạnh mẽ",
+            "D": "Khi cần cung cấp các chức năng cụ thể và linh hoạt"
+        },
+        "correct_answer": "D",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:59:44"
+    },
+    {
+        "question_number": 25,
+        "question_content": "Which HTTP status code often indicates a downstream service is unavailable?",
+        "options": {
+            "A": "200",
+            "B": "404",
+            "C": "503",
+            "D": "301"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:59:47"
+    },
+    {
+        "question_number": 15,
+        "question_content": "What pattern ensures data consistency across microservices?",
+        "options": {
+            "A": "Domain event",
+            "B": "Transaction script",
+            "C": "Aggregate",
+            "D": "Saga"
+        },
+        "correct_answer": "D",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:59:50"
+    },
+    {
+        "question_number": 10,
+        "question_content": "Loại dịch vụ nào ít bị ảnh hưởng nhất bởi các lớp dịch vụ khác?",
+        "options": {
+            "A": "Dịch vụ tiện ích",
+            "B": "Dịch vụ tác vụ",
+            "C": "Dịch vụ thực thể",
+            "D": "Dịch vụ vi mô"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:59:52"
+    },
+    {
+        "question_number": 24,
+        "question_content": "Which pattern is best suited for tailoring APIs to different client needs like mobile vs desktop?",
+        "options": {
+            "A": "Backend for frontends",
+            "B": "Service discovery",
+            "C": "Single page apps",
+            "D": "Event sourcing"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:59:55"
+    },
+    {
+        "question_number": 21,
+        "question_content": "What challenge is commonly associated with event sourcing?",
+        "options": {
+            "A": "Fast writes to the database",
+            "B": "Scaling read operations",
+            "C": "Keeping events small in size",
+            "D": "Rebuilding state after many events"
+        },
+        "correct_answer": "D",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 11:59:57"
+    },
+    {
+        "question_number": 3,
+        "question_content": "Giao diện dịch vụ (service interface) đóng vai trò gì trong dịch vụ web?",
+        "options": {
+            "A": "Cung cấp thông tin về chức năng mà dịch vụ cung cấp",
+            "B": "Cung cấp thông tin về công nghệ xây dựng dịch vụ",
+            "C": "Cung cấp thông tin về giao thức để tương tác với dịch vụ",
+            "D": "Cung cấp thông tin về địa chỉ để gửi dữ liệu tới dich vụ"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 12:00:00"
+    },
+    {
+        "question_number": 9,
+        "question_content": "Khi nào một logic khả tri (non-agnostic) có thể được đóng gói thành một microservice riêng biệt?",
+        "options": {
+            "A": "Chi phí triển khai và bảo trì",
+            "B": "Mức độ độc lập về logic và dữ liệu",
+            "C": "Yêu cầu hiệu suất và khả năng mở rộng",
+            "D": "Mức độ phức tạp của dịch vụ"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 12:00:03"
+    },
+    {
+        "question_number": 16,
+        "question_content": "Which challenge is addressed by the Aggregate pattern in DDD?",
+        "options": {
+            "A": "Improving UI design",
+            "B": "Simplifying database schema",
+            "C": "Eliminating object references across services",
+            "D": "Reducing API complexity"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 12:00:07"
+    },
+    {
+        "question_number": 23,
+        "question_content": "Which of the following best describes GraphQL in the context of API gateways?",
+        "options": {
+            "A": "It only works for REST services",
+            "B": "It is a messaging queue",
+            "C": "It simplifies API composition by allowing clients to specify data needs",
+            "D": "It replaces microservices"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 12:00:08"
+    },
+    {
+        "question_number": 26,
+        "question_content": "Which of the following is a primary reason for using asynchronous communication in microservices?",
+        "options": {
+            "A": "To reduce latency in request handling",
+            "B": "To simplify service discovery",
+            "C": "To decouple services for better scalability",
+            "D": "To enforce strict request-response patterns"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 12:00:11"
+    },
+    {
+        "question_number": 18,
+        "question_content": "How can a service publish domain events to other services?",
+        "options": {
+            "A": "By using a shared memory object",
+            "B": "Through REST polling",
+            "C": "Via event-driven messaging",
+            "D": "Through FTP updates"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 12:00:13"
+    },
+    {
+        "question_number": 12,
+        "question_content": "Giá trị của thuộc tính style trong SOAP có thể là gì?",
+        "options": {
+            "A": "Document",
+            "B": "RPC",
+            "C": "Cả A và B đều sai",
+            "D": "Cả A và B đều đúng"
+        },
+        "correct_answer": "D",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 12:00:17"
+    },
+    {
+        "question_number": 27,
+        "question_content": "What is a major challenge when implementing denormalized read models?",
+        "options": {
+            "A": "They slow down read operations",
+            "B": "They make microservices loosely coupled",
+            "C": "They require syncing across many events and potential duplication",
+            "D": "They increase security"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 12:00:19"
+    },
+    {
+        "question_number": 35,
+        "question_content": "Cho đoạn mã nguồn:\n\r\r@Path(\"/orders\")\npublic class OrderResource {\n\n    @GET\n    @Produces(MediaType.APPLICATION_JSON)\n    public Response getOrders() {\n        // Get all orders from the database.\n        return Response.ok(orders).build();\n    }\n\n    @POST\n    @Consumes(MediaType.APPLICATION_JSON)\n    public Response createOrder(Order order) {\n        // Create a new order in the database.\n        return Response.ok().build();\n    }\n\n    @PUT\n    @Path(\"{id}\")\n    @Consumes(MediaType.APPLICATION_JSON)\n    public Response updateOrder(@PathParam(\"id\") long id, Order order) {\n        // Update the order with the given ID in the database.\n        return Response.ok().build();\n    }\n\n    @DELETE\n    @Path(\"{id}\")\n    public Response deleteOrder(@PathParam(\"id\") long id) {\n        // Delete the order with the given ID from the database.\n        return Response.ok().build();\n    }\n\n}\n\r\rHTTP Request nào sẽ không được chuyển cho updateOrder () ?",
+        "options": {
+            "A": "Phương thức PUT, đường dẫn /orders/15",
+            "B": "Phương thức PUT, đường dẫn /orders",
+            "C": "Phương thức PUT, đường dẫn /orders/16",
+            "D": "Phương thức PUT, đường dẫn /orders/17"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 12:00:22"
+    },
+    {
+        "question_number": 36,
+        "question_content": "SOAP sử dụng cấu trúc dữ liệu nào để truyền thông tin?",
+        "options": {
+            "A": "HTML",
+            "B": "JSON",
+            "C": "Envelope",
+            "D": "CSV"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN262",
+        "crawled_at": "2025-06-13 12:00:23"
+    }
+]

@@ -1,0 +1,509 @@
+[
+    {
+        "question_number": 25,
+        "question_content": "Which technology is often used for real-time streaming between services?",
+        "options": {
+            "A": "Redis",
+            "B": "Kafka",
+            "C": "PostgreSQL",
+            "D": "gRPC"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:31:40"
+    },
+    {
+        "question_number": 1,
+        "question_content": "Coarse-grained trong dịch vụ web có đặc điểm gì?",
+        "options": {
+            "A": "Cung cấp các dịch vụ nhỏ, chi tiết",
+            "B": "Cung cấp các dịch vụ lớn, tổng quát",
+            "C": "Cung cấp các dịch vụ tương đối nhỏ và phổ biến",
+            "D": "Cung cấp các dịch vụ có phạm vi hạn chế"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:31:41"
+    },
+    {
+        "question_number": 9,
+        "question_content": "Phương thức HTTP nào thường được sử dụng để truy xuất tài nguyên từ dịch vụ RESTful?",
+        "options": {
+            "A": "GET",
+            "B": "PUT",
+            "C": "POST",
+            "D": "DELETE"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:31:43"
+    },
+    {
+        "question_number": 5,
+        "question_content": "Một dịch vụ khi nào được coi là bất khả tri?",
+        "options": {
+            "A": "Chứa logic có khả năng tái sử dụng bởi nhiều quy trình nghiệp vụ",
+            "B": "Chức logic không thể tái sử dụng nhưng có thể có tiềm năng tái sử dụng trong giải pháp",
+            "C": "Khi nó có khả năng triển khai độc lập",
+            "D": "Chức các logic không thể tái sử dụng bởi các quy trình nghiệp vụ"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:31:45"
+    },
+    {
+        "question_number": 3,
+        "question_content": "Đặc điểm nào sau đây không phải là một lợi ích của loose coupling trong dịch vụ web?",
+        "options": {
+            "A": "Tăng tính mở rộng và tái sử dụng của dịch vụ web",
+            "B": "Giảm độ phức tạp và ràng buộc giữa các thành phần",
+            "C": "Dễ dàng thay đổi và cập nhật các thành phần mà không ảnh hưởng đến toàn bộ hệ thống",
+            "D": "Tăng hiệu suất và tốc độ truyền thông trong dịch vụ web"
+        },
+        "correct_answer": "D",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:31:47"
+    },
+    {
+        "question_number": 14,
+        "question_content": "What is the role of a message broker in microservice communication?",
+        "options": {
+            "A": "Transform HTTP to gRPC",
+            "B": "Store configuration settings",
+            "C": "Coordinate and route messages",
+            "D": "Serve static content"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:31:48"
+    },
+    {
+        "question_number": 13,
+        "question_content": "Which of the following is a primary reason for using asynchronous communication in microservices?",
+        "options": {
+            "A": "To reduce latency in request handling",
+            "B": "To simplify service discovery",
+            "C": "To decouple services for better scalability",
+            "D": "To enforce strict request-response patterns"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:31:50"
+    },
+    {
+        "question_number": 32,
+        "question_content": "Nếu không cài đặt gì thêm, SOAP hay REST có thể sử dụng máy chủ proxy?",
+        "options": {
+            "A": "SOAP",
+            "B": "REST",
+            "C": "Cả SOAP và REST đều có thể sử dụng máy chủ proxy",
+            "D": "Không SOAP và REST đều không thể sử dụng máy chủ proxy"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:31:52"
+    },
+    {
+        "question_number": 27,
+        "question_content": "Which of the following best describes eventual consistency in a query model?",
+        "options": {
+            "A": "Read and write operations are immediately consistent",
+            "B": "Data is written once and never changed",
+            "C": "Read models may lag behind write models due to asynchronous updates",
+            "D": "All services write to the same database"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:31:54"
+    },
+    {
+        "question_number": 23,
+        "question_content": "What is one of the main reasons for using an API gateway in a microservices architecture?",
+        "options": {
+            "A": "To increase database performance",
+            "B": "To expose internal service APIs directly",
+            "C": "To act as a single entry point for clients",
+            "D": "To remove the need for load balancing"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:31:58"
+    },
+    {
+        "question_number": 28,
+        "question_content": "What is a key benefit of using materialized views in query processing?",
+        "options": {
+            "A": "They reduce write latency",
+            "B": "They support asynchronous communication",
+            "C": "They improve performance by precomputing results",
+            "D": "They manage user sessions"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:32:01"
+    },
+    {
+        "question_number": 10,
+        "question_content": "Điều gì cần cân nhắc khi thiết kế dịch vụ để đảm bảo tính nhất quán và chuẩn hóa?",
+        "options": {
+            "A": "Sử dụng kiểu dữ liệu riêng",
+            "B": "Giảm độ chi tiết của API",
+            "C": "Tăng số lượng thao tác",
+            "D": "Áp dụng các nguyên tắc hướng dịch vụ liên quan đến hợp đồng"
+        },
+        "correct_answer": "D",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:32:02"
+    },
+    {
+        "question_number": 24,
+        "question_content": "What is the challenge with having a one-size-fits-all API in microservices?",
+        "options": {
+            "A": "It is always slower than direct DB queries",
+            "B": "It requires GraphQL",
+            "C": "Different clients have different data needs and network constraints",
+            "D": "It reduces reusability of services"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:32:05"
+    },
+    {
+        "question_number": 7,
+        "question_content": "Quá trình mô hình hóa dịch vụ có cần phải đảm bảo tính linh hoạt của hợp đồng dịch vụ?",
+        "options": {
+            "A": "Có, để dễ dàng cập nhật và thay đổi trong quá trình phát triển",
+            "B": "Không, để đảm bảo tính nhất quán và ổn định của dịch vụ",
+            "C": "Có, để giảm thiểu sự phức tạp của dịch vụ",
+            "D": "Không, để giảm thiểu rủi ro và lỗi trong quá trình triển khai"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:32:08"
+    },
+    {
+        "question_number": 31,
+        "question_content": "Dịch vụ web SOAP có hợp đồng không?",
+        "options": {
+            "A": "Có",
+            "B": "Không",
+            "C": "Đôi khi",
+            "D": "Tùy thuộc"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:32:10"
+    },
+    {
+        "question_number": 19,
+        "question_content": "In a microservices environment, what does 'immutable infrastructure' imply?",
+        "options": {
+            "A": "Infrastructure cannot be resized",
+            "B": "Infrastructure is updated in-place",
+            "C": "Infrastructure is replaced rather than changed",
+            "D": "Infrastructure is read-only"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:32:12"
+    },
+    {
+        "question_number": 35,
+        "question_content": "Cho đoạn mã nguồn:\n\r\r@Path(\"/products\")\npublic class ProductResource {\n\n    @GET\n    @Produces(MediaType.APPLICATION_JSON)\n    public Response getProducts() {\n        // Get all products from the database.\n        return Response.ok(products).build();\n    }\n\n    @POST\n    @Consumes(MediaType.APPLICATION_XML)\n    public Response createProduct(Product product) {\n        // Create a new product in the database.\n        return Response.ok().build();\n    }\n\n    @PUT\n    @Path(\"{id}\")\n    @Consumes(MediaType.MULTIPART_FORM_DATA)\n    public Response updateProduct(@PathParam(\"id\") long id, Product product) {\n        // Update the product with the given ID in the database.\n        return Response.ok().build();\n    }\n\n    @DELETE\n    @Path(\"{id}\")\n    public Response deleteProduct(@PathParam(\"id\") long id) {\n        // Delete the product with the given ID from the database.\n        return Response.ok().build();\n    }\n\n}\n \n\r\rPhương thức HTTP cho phương thức updateProduct() là gì?",
+        "options": {
+            "A": "GET",
+            "B": "POST",
+            "C": "PUT",
+            "D": "DELETE"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:32:14"
+    },
+    {
+        "question_number": 30,
+        "question_content": "Which protocol is traditionally used in centralized transaction coordination?",
+        "options": {
+            "A": "HTTP",
+            "B": "gRPC",
+            "C": "Two-Phase Commit",
+            "D": "REST"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:32:16"
+    },
+    {
+        "question_number": 16,
+        "question_content": "What is the role of a domain model in a microservice application?",
+        "options": {
+            "A": "To define UI layout",
+            "B": "To enforce security policies",
+            "C": "To implement business rules and logic",
+            "D": "To manage static content"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:32:19"
+    },
+    {
+        "question_number": 15,
+        "question_content": "What does the transaction script pattern typically use?",
+        "options": {
+            "A": "Object references",
+            "B": "Flat procedures",
+            "C": "Event-driven architecture",
+            "D": "Command-query separation"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:32:21"
+    },
+    {
+        "question_number": 20,
+        "question_content": "Which method helps to control traffic flow during progressive delivery?",
+        "options": {
+            "A": "Webhooks",
+            "B": "Feature flags",
+            "C": "Service mesh",
+            "D": "Sidecar pattern"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:32:25"
+    },
+    {
+        "question_number": 26,
+        "question_content": "What is the role of a message broker in microservice communication?",
+        "options": {
+            "A": "Transform HTTP to gRPC",
+            "B": "Store configuration settings",
+            "C": "Coordinate and route messages",
+            "D": "Serve static content"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:32:28"
+    },
+    {
+        "question_number": 22,
+        "question_content": "In event sourcing, a projection should be:",
+        "options": {
+            "A": "Highly consistent and blocking",
+            "B": "Mutable and centrally controlled",
+            "C": "Eventually consistent and read-optimized",
+            "D": "Stored alongside the event log"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:32:32"
+    },
+    {
+        "question_number": 36,
+        "question_content": "Phương thức HTTP nào được sử dụng để cập nhật một resource trong Restful web service?",
+        "options": {
+            "A": "PUT",
+            "B": "GET",
+            "C": "POST",
+            "D": "DELETE"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:32:34"
+    },
+    {
+        "question_number": 12,
+        "question_content": "Trong Utility Service Design, nguyên tắc \"Tái sử dụng Dịch vụ\" nhấn mạnh vào điều gì?",
+        "options": {
+            "A": "Xây dựng microservice như một dịch vụ web dựa trên SOAP",
+            "B": "Tạo ra API phong phú",
+            "C": "Phát triển dịch vụ tiện ích linh hoạt và tái sử dụng",
+            "D": "Thực hiện các chức năng xử lý cấp thấp"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:32:37"
+    },
+    {
+        "question_number": 8,
+        "question_content": "Sự khác biệt chính giữa RESTful services và SOAP-based web services trong phân tích hướng dịch vụ là gì?",
+        "options": {
+            "A": "RESTful services sử dụng các phương thức HTTP tiêu chuẩn và tập trung vào tài nguyên, trong khi SOAP-based web services sử dụng SOAP và tập trung vào các hoạt động",
+            "B": "RESTful services sử dụng XML để truyền dữ liệu, trong khi SOAP-based web services sử dụng JSON",
+            "C": "RESTful services đòi hỏi tuân thủ nhiều tiêu chuẩn WS-*, trong khi SOAP-based web services đơn giản hơn và ít tiêu chuẩn hơn",
+            "D": "RESTful services không sử dụng HTTP/HTTPS, trong khi SOAP-based web services chỉ sử dụng HTTP/HTTPS"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:32:38"
+    },
+    {
+        "question_number": 11,
+        "question_content": "Hướng dẫn nào dưới đây giúp giải quyết vấn đề về mức độ chi tiết của hợp đồng dịch vụ?",
+        "options": {
+            "A": "Hiểu rõ giới hạn hiệu năng của môi trường triển khai mục tiêu",
+            "B": "Cung cấp định nghĩa WSDL thay thế cho dịch vụ Web",
+            "C": "Gán các API có mức độ chi tiết thô cho các dịch vụ được chỉ định là điểm kết hợp giải pháp",
+            "D": "Hỗ trợ phương thức giao tiếp thứ cấp trong kho dịch vụ"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:32:40"
+    },
+    {
+        "question_number": 40,
+        "question_content": "Cho định nghĩa WSDL: \n\r\r<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<definitions xmlns=\"http://schemas.xmlsoap.org/wsdl/\" xmlns:tns=\"http://www.example.com/accountRegistration\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/wsdl/soap/\" name=\"AccountRegistration\" targetNamespace=\"http://www.example.com/accountRegistration\">\n  <types>\n    <xsd:schema elementFormDefault=\"qualified\" targetNamespace=\"http://www.example.com/accountRegistration\">\n      <xsd:element name=\"Account\">\n        <xsd:complexType>\n          <xsd:sequence>\n            <xsd:element name=\"username\" type=\"xsd:string\"/>\n            <xsd:element name=\"password\" type=\"xsd:string\"/>\n          </xsd:sequence>\n        </xsd:complexType>\n      </xsd:element>\n      <xsd:element name=\"AccountResponse\">\n        <xsd:complexType>\n          <xsd:sequence>\n            <xsd:element name=\"success\" type=\"xsd:boolean\"/>\n          </xsd:sequence>\n        </xsd:complexType>\n      </xsd:element>\n    </xsd:schema>\n  </types>\n  <message name=\"RegisterAccount\">\n    <part name=\"parameters\" element=\"tns:Account\"/>\n  </message>\n  <message name=\"RegisterAccountResponse\">\n    <part name=\"parameters\" element=\"tns:AccountResponse\"/>\n  </message>\n  <portType name=\"AccountRegistrationPortType\">\n    <operation name=\"RegisterAccount\">\n      <input message=\"tns:RegisterAccount\"/>\n      <output message=\"tns:RegisterAccountResponse\"/>\n    </operation>\n  </portType>\n  <binding name=\"AccountRegistrationBinding\" type=\"tns:AccountRegistrationPortType\">\n    <soap:binding transport=\"http://schemas.xmlsoap.org/soap/http\"/>\n    <operation name=\"RegisterAccount\">\n      <soap:operation soapAction=\"http://www.example.com/accountRegistration/RegisterAccount\"/>\n      <input>\n        <soap:body use=\"literal\"/>\n      </input>\n      <output>\n        <soap:body use=\"literal\"/>\n      </output>\n    </operation>\n  </binding>\n  <service name=\"AccountRegistrationService\">\n    <port name=\"AccountRegistrationPort\" binding=\"tns:AccountRegistrationBinding\">\n      <soap:address location=\"http://www.example.com/accountRegistration\"/>\n    </port>\n  </service>\n</definitions> \n\r\rĐâu là phương thức mà dịch vụ cung cấp ?",
+        "options": {
+            "A": "Register",
+            "B": "AccountRegistrationPortType",
+            "C": "RegisterAccount",
+            "D": "AccountRegistrationService"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:32:43"
+    },
+    {
+        "question_number": 4,
+        "question_content": "Các đặc điểm của SOA?",
+        "options": {
+            "A": "Business driven, Neutral Driven, Composition Centric,Enterprise-Centric",
+            "B": "Business driven, Neutral Driven, Flexibility,Enterprise-Centric",
+            "C": "Neutral Driven, Composition Centric,Enterprise-Centric",
+            "D": "Accuracy, Neutral Driven, Flexibility,Enterprise-Centric"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:32:45"
+    },
+    {
+        "question_number": 2,
+        "question_content": "Ví dụ về dịch vụ web là \"Thanh toán trực tuyến\", loại dịch vụ này thuộc mô hình liên lạc đồng bộ hay không đồng bộ?",
+        "options": {
+            "A": "Không đồng bộ",
+            "B": "Đồng bộ",
+            "C": "Cả A, B đều đúng",
+            "D": "Không cái nào đúng"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:32:48"
+    },
+    {
+        "question_number": 6,
+        "question_content": "Phân loại các lớp mô hình dịch vụ?",
+        "options": {
+            "A": "Bất khả tri: Entity Service Layer, Microservices Layer ; Khả tri: Task Service Layer, Utility Service Layer",
+            "B": "Bất khả tri: Entity Service Layer, Utility Service Layer; Khả tri: Task Service Layer, Microservices Layer",
+            "C": "Bất khả tri: Task Service Layer, Microservices Layer; Khả tri: Entity Service Layer, Utility Service Layer",
+            "D": "Bất khả tri: Task Service Layer, Entity Service Layer ; Khả tri: Microservices Layer, Utility Service Layer"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:32:50"
+    },
+    {
+        "question_number": 37,
+        "question_content": "Trong WSDL, một phương thức được định nghĩa trong phần nào của PortType?",
+        "options": {
+            "A": "Output",
+            "B": "Input",
+            "C": "Operation",
+            "D": "Fault"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:32:53"
+    },
+    {
+        "question_number": 34,
+        "question_content": "Cho đoạn mã nguồn:\n\r\r@Path(\"/orders\")\npublic class OrderResource {\n\n    @GET\n    @Produces(MediaType.APPLICATION_JSON)\n    public Response getOrders() {\n        // Get all orders from the database.\n        return Response.ok(orders).build();\n    }\n\n    @POST\n    @Consumes(MediaType.APPLICATION_JSON)\n    public Response createOrder(Order order) {\n        // Create a new order in the database.\n        return Response.ok().build();\n    }\n\n    @PUT\n    @Path(\"{id}\")\n    @Consumes(MediaType.APPLICATION_JSON)\n    public Response updateOrder(@PathParam(\"id\") long id, Order order) {\n        // Update the order with the given ID in the database.\n        return Response.ok().build();\n    }\n\n    @DELETE\n    @Path(\"{id}\")\n    public Response deleteOrder(@PathParam(\"id\") long id) {\n        // Delete the order with the given ID from the database.\n        return Response.ok().build();\n    }\n\n}\n\r\rĐường dẫn của phương thức getOrders() là gì?",
+        "options": {
+            "A": "/orders",
+            "B": "/order",
+            "C": "/orders/{id}",
+            "D": "/orders/create"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:32:55"
+    },
+    {
+        "question_number": 21,
+        "question_content": "Which of the following best describes an event store?",
+        "options": {
+            "A": "A database for REST services",
+            "B": "A service that sends push notifications",
+            "C": "A log of immutable events that represent state transitions",
+            "D": "A cache for recent API responses"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:33:00"
+    },
+    {
+        "question_number": 33,
+        "question_content": "Cho đoạn mã nguồn:\n\r\r@Path(\"/products\")\npublic class ProductResource {\n\n    @GET\n    @Produces(MediaType.APPLICATION_JSON)\n    public Response getProducts() {\n        // Get all products from the database.\n        return Response.ok(products).build();\n    }\n\n    @POST\n    @Consumes(MediaType.APPLICATION_XML)\n    public Response createProduct(Product product) {\n        // Create a new product in the database.\n        return Response.ok().build();\n    }\n\n    @PUT\n    @Path(\"{id}\")\n    @Consumes(MediaType.MULTIPART_FORM_DATA)\n    public Response updateProduct(@PathParam(\"id\") long id, Product product) {\n        // Update the product with the given ID in the database.\n        return Response.ok().build();\n    }\n\n    @DELETE\n    @Path(\"{id}\")\n    public Response deleteProduct(@PathParam(\"id\") long id) {\n        // Delete the product with the given ID from the database.\n        return Response.ok().build();\n    }\n\n}\n \n\r\rKiểu dữ liệu phản hồi của phương thức getProducts() là gì?",
+        "options": {
+            "A": "text/plain",
+            "B": "application/json",
+            "C": "application/xml",
+            "D": "image/jpeg"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:33:02"
+    },
+    {
+        "question_number": 17,
+        "question_content": "What does 'bounded context' refer to in microservice design?",
+        "options": {
+            "A": "A shared model between services",
+            "B": "A service being deployed on multiple servers",
+            "C": "A clear boundary around a specific business capability",
+            "D": "Use of shared data schemas"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:33:04"
+    },
+    {
+        "question_number": 38,
+        "question_content": "Cho định nghĩa WSDL: \n\r\r<wsdl:definitions xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\" xmlns:tns=\"http://www.example.com/onlinecharging\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/wsdl/soap/\" name=\"OnlineCharging\" targetNamespace=\"http://www.example.com/onlinecharging\">\n  <wsdl:types>\n    <xsd:schema elementFormDefault=\"qualified\" targetNamespace=\"http://www.example.com/onlinecharging\">\n      <xsd:element name=\"Customer\">\n        <xsd:complexType>\n          <xsd:sequence>\n            <xsd:element name=\"CustomerId\" type=\"xsd:string\" minOccurs=\"1\" />\n            <xsd:element name=\"CustomerName\" type=\"xsd:string\" minOccurs=\"1\" />\n          </xsd:sequence>\n        </xsd:complexType>\n      </xsd:element>\n      <xsd:element name=\"Charge\">\n        <xsd:complexType>\n          <xsd:sequence>\n            <xsd:element name=\"CustomerId\" type=\"xsd:string\" minOccurs=\"1\" />\n            <xsd:element name=\"Amount\" type=\"xsd:double\" minOccurs=\"1\" />\n          </xsd:sequence>\n        </xsd:complexType>\n      </xsd:element>\n      <xsd:element name=\"ChargeResult\">\n        <xsd:complexType>\n          <xsd:sequence>\n            <xsd:element name=\"Status\" type=\"xsd:string\" minOccurs=\"1\" />\n            <xsd:element name=\"Message\" type=\"xsd:string\" minOccurs=\"1\" />\n          </xsd:sequence>\n        </xsd:complexType>\n      </xsd:element>\n    </xsd:schema>\n  </wsdl:types>\n  <wsdl:message name=\"ChargeRequest\">\n    <wsdl:part name=\"customer\" element=\"tns:Customer\" />\n    <wsdl:part name=\"charge\" element=\"tns:Charge\" />\n  </wsdl:message>\n  <wsdl:message name=\"ChargeResponse\">\n    <wsdl:part name=\"result\" element=\"tns:ChargeResult\" />\n  </wsdl:message>\n  <wsdl:portType name=\"OnlineChargingPortType\">\n    <wsdl:operation name=\"Charge\">\n      <wsdl:input message=\"tns:ChargeRequest\" />\n      <wsdl:output message=\"tns:ChargeResponse\" />\n    </wsdl:operation>\n  </wsdl:portType>\n  <wsdl:binding name=\"OnlineChargingBinding\" type=\"tns:OnlineChargingPortType\">\n    <soap:binding transport=\"http://schemas.xmlsoap.org/soap/http\" />\n    <wsdl:operation name=\"Charge\">\n      <soap:operation soapAction=\"http://www.example.com/onlinecharging/Charge\" />\n      <wsdl:input>\n        <soap:body use=\"literal\" />\n      </wsdl:input>\n      <wsdl:output>\n        <soap:body use=\"literal\" />\n      </wsdl:output>\n    </wsdl:operation>\n  </wsdl:binding>\n  <wsdl:service name=\"OnlineChargingService\">\n    <wsdl:port name=\"OnlineChargingPort\" binding=\"tns:OnlineChargingBinding\">\n      <soap:address location=\"http://www.example.com/onlinecharging\" />\n    </wsdl:port>\n  </wsdl:service>\n</wsdl:definitions> \n\r\rThông tin nào được dịch vụ web trả về?",
+        "options": {
+            "A": "Thông báo mô tả trạng thái của giao dịch nạp tiền",
+            "B": "Trạng thái của giao dịch nạp tiền và thông điệp kèm theo",
+            "C": "Mã khách hàng và số tiền đã nạp",
+            "D": "Mã khách hàng, tên khách hàng, số tiền đã nạp và số thẻ tín dụng"
+        },
+        "correct_answer": "B",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:33:05"
+    },
+    {
+        "question_number": 18,
+        "question_content": "Microservices typically emphasize which kind of deployment?",
+        "options": {
+            "A": "Manual and centralized",
+            "B": "Monolithic deployment",
+            "C": "Decentralized and independent",
+            "D": "Weekly batch deployment"
+        },
+        "correct_answer": "C",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:33:07"
+    },
+    {
+        "question_number": 39,
+        "question_content": "Cho định nghĩa WSDL: \n\r\r<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<definitions xmlns=\"http://schemas.xmlsoap.org/wsdl/\" xmlns:tns=\"http://www.example.com/accountRegistration\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/wsdl/soap/\" name=\"AccountRegistration\" targetNamespace=\"http://www.example.com/accountRegistration\">\n  <types>\n    <xsd:schema elementFormDefault=\"qualified\" targetNamespace=\"http://www.example.com/accountRegistration\">\n      <xsd:element name=\"Account\">\n        <xsd:complexType>\n          <xsd:sequence>\n            <xsd:element name=\"username\" type=\"xsd:string\"/>\n            <xsd:element name=\"password\" type=\"xsd:string\"/>\n          </xsd:sequence>\n        </xsd:complexType>\n      </xsd:element>\n      <xsd:element name=\"AccountResponse\">\n        <xsd:complexType>\n          <xsd:sequence>\n            <xsd:element name=\"success\" type=\"xsd:boolean\"/>\n          </xsd:sequence>\n        </xsd:complexType>\n      </xsd:element>\n    </xsd:schema>\n  </types>\n  <message name=\"RegisterAccount\">\n    <part name=\"parameters\" element=\"tns:Account\"/>\n  </message>\n  <message name=\"RegisterAccountResponse\">\n    <part name=\"parameters\" element=\"tns:AccountResponse\"/>\n  </message>\n  <portType name=\"AccountRegistrationPortType\">\n    <operation name=\"RegisterAccount\">\n      <input message=\"tns:RegisterAccount\"/>\n      <output message=\"tns:RegisterAccountResponse\"/>\n    </operation>\n  </portType>\n  <binding name=\"AccountRegistrationBinding\" type=\"tns:AccountRegistrationPortType\">\n    <soap:binding transport=\"http://schemas.xmlsoap.org/soap/http\"/>\n    <operation name=\"RegisterAccount\">\n      <soap:operation soapAction=\"http://www.example.com/accountRegistration/RegisterAccount\"/>\n      <input>\n        <soap:body use=\"literal\"/>\n      </input>\n      <output>\n        <soap:body use=\"literal\"/>\n      </output>\n    </operation>\n  </binding>\n  <service name=\"AccountRegistrationService\">\n    <port name=\"AccountRegistrationPort\" binding=\"tns:AccountRegistrationBinding\">\n      <soap:address location=\"http://www.example.com/accountRegistration\"/>\n    </port>\n  </service>\n</definitions> \n\r\rDịch vụ web tên gì?",
+        "options": {
+            "A": "AccountRegistrationService",
+            "B": "AccountRegistration",
+            "C": "AccountRegistrationPortType",
+            "D": "AccountRegistrationBinding"
+        },
+        "correct_answer": "A",
+        "crawled_by": "B21DCCN586",
+        "crawled_at": "2025-06-13 13:33:09"
+    }
+]

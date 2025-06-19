@@ -1,0 +1,191 @@
+[
+    {
+        "question": "Độ mịn dịch vụ ảnh hưởng đến điều gì trong dịch vụ web?",
+        "answers": [
+            {
+                "id": "A",
+                "text": "Khả năng tái sử dụng và tính linh hoạt của dịch vụ"
+            },
+            {
+                "id": "B",
+                "text": "Khả năng mở rộng và tương tác giữa các dịch vụ"
+            },
+            {
+                "id": "C",
+                "text": "Khả năng hiệu suất và bảo mật của dịch vụ"
+            },
+            {
+                "id": "D",
+                "text": "Khả năng kết nối và tương tác với người dùng"
+            }
+        ]
+    },
+    {
+        "question": "SOA giúp cải thiện tính chất gì của hệ thống phần mềm?",
+        "answers": [
+            {
+                "id": "A",
+                "text": "Linh hoạt và tái sử dụng"
+            },
+            {
+                "id": "B",
+                "text": "Tích cực và đồng bộ"
+            },
+            {
+                "id": "C",
+                "text": "An toàn và bảo mật"
+            },
+            {
+                "id": "D",
+                "text": "Phổ biến và hiệu quả"
+            }
+        ]
+    },
+    {
+        "question": "Loose coupling trong dịch vụ web giúp thúc đẩy tính chất nào sau đây?",
+        "answers": [
+            {
+                "id": "A",
+                "text": "Tính tin cậy (reliability)"
+            },
+            {
+                "id": "B",
+                "text": "Tính bảo mật (security)"
+            },
+            {
+                "id": "C",
+                "text": "Tính mở rộng (scalability)"
+            },
+            {
+                "id": "D",
+                "text": "Tính hiệu suất (performance)"
+            }
+        ]
+    },
+    {
+        "question": "Các đặc điểm của SOA?",
+        "answers": [
+            {
+                "id": "A",
+                "text": "Business driven, Neutral Driven, Composition Centric,Enterprise-Centric"
+            },
+            {
+                "id": "B",
+                "text": "Business driven, Neutral Driven, Flexibility,Enterprise-Centric"
+            },
+            {
+                "id": "C",
+                "text": "Neutral Driven, Composition Centric,Enterprise-Centric"
+            },
+            {
+                "id": "D",
+                "text": "Accuracy, Neutral Driven, Flexibility,Enterprise-Centric"
+            }
+        ]
+    },
+    {
+        "question": "Phân loại các lớp mô hình dịch vụ?",
+        "answers": [
+            {
+                "id": "A",
+                "text": "Bất khả tri: Entity Service Layer, Microservices Layer ; Khả tri: Task Service Layer, Utility Service Layer"
+            },
+            {
+                "id": "B",
+                "text": "Bất khả tri: Entity Service Layer, Utility Service Layer; Khả tri: Task Service Layer, Microservices Layer"
+            },
+            {
+                "id": "C",
+                "text": "Bất khả tri: Task Service Layer, Microservices Layer; Khả tri: Entity Service Layer, Utility Service Layer"
+            },
+            {
+                "id": "D",
+                "text": "Bất khả tri: Task Service Layer, Entity Service Layer ; Khả tri: Microservices Layer, Utility Service Layer"
+            }
+        ]
+    },
+    {
+        "question": "Dịch vụ loại nào được sử dụng để xử lý các thực thể kinh doanh liên quan, như hóa đơn, khách hàng hoặc yêu cầu?",
+        "answers": [
+            {
+                "id": "A",
+                "text": "Task service"
+            },
+            {
+                "id": "B",
+                "text": "Microservice"
+            },
+            {
+                "id": "C",
+                "text": "Entity service"
+            },
+            {
+                "id": "D",
+                "text": "Utility service"
+            }
+        ]
+    },
+    {
+        "question": "Logic bất khả tri là gì?",
+        "answers": [
+            {
+                "id": "A",
+                "text": "Logic đủ chung chung, không cụ thể, không liên quan đến một nhiệm vụ gốc cụ thể"
+            },
+            {
+                "id": "B",
+                "text": "Logic đủ chung chung, không cụ thể, dành cho nhiệm vụ có mục đích duy nhất"
+            },
+            {
+                "id": "C",
+                "text": "Logic dành riêng cho một nhiệm vụ có mục đích duy nhất"
+            },
+            {
+                "id": "D",
+                "text": "Logic dành riêng cho một nhiệm vụ có đa mục đích"
+            }
+        ]
+    },
+    {
+        "question": "Quá trình mô hình hóa dịch vụ có cần phải đảm bảo tính linh hoạt của hợp đồng dịch vụ?",
+        "answers": [
+            {
+                "id": "A",
+                "text": "Có, để dễ dàng cập nhật và thay đổi trong quá trình phát triển"
+            },
+            {
+                "id": "B",
+                "text": "Không, để đảm bảo tính nhất quán và ổn định của dịch vụ"
+            },
+            {
+                "id": "C",
+                "text": "Có, để giảm thiểu sự phức tạp của dịch vụ"
+            },
+            {
+                "id": "D",
+                "text": "Không, để giảm thiểu rủi ro và lỗi trong quá trình triển khai"
+            }
+        ]
+    },
+    {
+        "question": "Trong quá trình xác định các tương tác dịch vụ, các tương tác được xác định dựa trên điều gì?",
+        "answers": [
+            {
+                "id": "A",
+                "text": "Yêu cầu về tài nguyên và phương thức"
+            },
+            {
+                "id": "B",
+                "text": "Các tình huống thành công và thất bại có thể xảy ra trong luồng công việc của quy trình"
+            },
+            {
+                "id": "C",
+                "text": "Khả năng mở rộng và triển khai"
+            },
+            {
+                "id": "D",
+                "text": "Yêu cầu về hiệu suất và độ tin cậy"
+            }
+        ]
+    }
+]
